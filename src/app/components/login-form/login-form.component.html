@@ -1,0 +1,101 @@
+<div class="form-wrap">
+  <div
+    class="text-xl md:text-2xl font-semibold text-[#3A3A3A] mb-2 leading-normal ml-auto"
+  >
+    Please Sign up / Login <br />to buy the plan
+  </div>
+
+  <div>
+    <form
+      *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div
+        class="text-red-500 text-[13px] text-center mb-1 font-semibold"
+        *ngIf="f.submitted && isSignUpFailed"
+      >
+        {{ errorMessage }}
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter Email Address"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+          />
+
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="username.errors && f.submitted"
+          >
+            Username is required!
+          </div>
+        </div>
+
+        <div>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Enter Password"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="3"
+            #password="ngModel"
+          />
+
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="password.errors && f.submitted"
+          >
+            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['minlength']">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="text-sm my-3 font-medium block" [routerLink]="['/info/forget-password']">
+        Forget Password?</a
+      >
+      <div>
+        <button
+          type="submit"
+          class="btn btn-primary w-full"
+          [disabled]="loading"
+        >
+          Login
+        </button>
+        <button
+          type="submit"
+          class="btn btn-secondary w-full"
+          [routerLink]="['/info/sign-up']"
+        >
+          Signup
+        </button>
+      </div>
+
+      <div class="social-wrap">
+        <ul class="social-icon">
+          <li (click)="loginWithFacebook()">
+            <img src="assets/images/social-facebook.png" alt="Facebook Login" />
+          </li>
+          <li (click)="loginWithGoogle()">
+            <img src="assets/images/social-google.png" alt="Google Login" />
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>

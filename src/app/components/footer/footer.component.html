@@ -1,0 +1,91 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="footer-logo">
+          <a href="/">
+            <img
+              src="assets/images/esimexpresslogo.png"
+              alt="ESimExpress App Logo"
+              title="ESimExpress App Logo"
+              style="width: 121px; filter: invert(1)"
+          /></a>
+          <!-- <p>
+            ESimExpress envisions to become a market leader in providing digital
+            services in the form of mobile data via email eradicating the need
+            for outdated SIM cards ...
+            <a href="info/Aboutus" aria-label="Read more about ESimExpress" title="Read more about ESimExpress">Learn about ESimExpress</a>
+
+          </p> -->
+          <!-- <ul class="social">
+            <li *ngFor="let item of social">
+              <a [href]="item.link" target="_blank">
+                <img [src]="item.icon" class="img-fluid" [alt]="item.alt" [title]="item.alt" />
+              </a>
+            </li>
+          </ul> -->
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+            <h2>Popular Countries</h2>
+            <ul class="countrylist">
+                <li><a [routerLink]="['esim/UK']">eSIM UK</a></li>
+                <li><a [routerLink]="['esim/Thailand']">eSIM Thailand</a></li>
+                <li><a [routerLink]="['esim/USA']">eSIM USA</a></li>
+                <li><a [routerLink]="['esim/Italy']">eSIM Italy</a></li>
+                <li><a [routerLink]="['esim/France']">eSIM France</a></li>
+                <li><a [routerLink]="['esim/Japan']">eSIM Japan</a></li>
+                <li><a [routerLink]="['esim/Global']">Global eSIM</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h2>My eSIM</h2>
+            <ul>
+                <li><a [routerLink]="['home']">BUY ESIM</a></li>
+                <li>
+                <a [routerLink]="['info/Installation']">eSIM Installation</a>
+                </li>
+                <li><a [routerLink]="['info/faq']">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <div class="">
+              <h2>More Info</h2>
+              <ul>
+                  <li>
+                    <a
+                    [routerLink]="['info/contactus']"
+                    aria-label="Contact Us"
+                    >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a [routerLink]="['info/terms']" aria-label="Terms"
+                    >Terms</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                    [routerLink]="['info/policy']"
+                    aria-label="Privacy Policy"
+                    >Privacy Policy</a
+                    >
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 20px">
+        <div class="col">
+          <p class="text-center text-white">ESimExpress © {{ year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

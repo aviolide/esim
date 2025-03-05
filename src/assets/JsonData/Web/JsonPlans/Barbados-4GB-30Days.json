@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1388,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>4G Data-only E-SIM.</li><li>Internet connectivity required for eSIM activation.</li><li>Operates on&nbsp;C &amp; W Barbados&nbsp;network in&nbsp;Barbados</li><li>Activation: Begins upon connecting to network in supported countries</li><li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li><li>Customer Support: 24/7 business and customer support service</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Supports only in mentioned destination</li></ul><p><strong>Supported destination:</strong></p><ul><li>Barbados</li></ul><p><strong>APN:</strong></p><ul><li>plus</li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Barbados 4GB 30Days",
+    "meta_title": "0",
+    "operatorname": "null",
+    "dataallowance": "4",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Barbados 4GB 30Days",
+    "sellingcost": 12.5,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "46",
+    "countryname": "Barbados"
+  }
+]

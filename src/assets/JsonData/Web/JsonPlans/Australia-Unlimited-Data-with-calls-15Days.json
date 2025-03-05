@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1280,
+    "addinformation": "<p><strong>Package Details:</strong></p>\n\n<ul>\n\t<li>4G high-speed data&nbsp;</li>\n\t<li>Unlimited local calls and Text</li>\n\t<li>Operates&nbsp;on Vodafone</li>\n\t<li>500 International Minutes in - (Bangladesh, Japan, Philippines, USA, Vietnam, Thailand, India, Singapore, China, UK, Ireland, North Korea, France, Italy, Greece, Portugal, Spain, Austria, Canada, Pakistan, Malaysia, New Zealand, Indonesia, Sri Lanka, Hong Kong).&nbsp;</li>\n\t<li>Validity starts immediately after purchase</li>\n</ul>\n\n<p><strong>Usage Restrictions</strong>:</p>\n\n<ul>\n\t<li>Outbound texts are not supported.</li>\n</ul>\n\n<p><strong>Supported roaming destinations:</strong></p>\n\n<ul>\n\t<li>Australia&nbsp;</li>\n</ul>\n",
+    "vaildity": "15",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Australia Unlimited Data with calls 15Days",
+    "meta_title": "0",
+    "operatorname": "Vodafone",
+    "dataallowance": "",
+    "dataallowancetype": "",
+    "voice_minute": "Unlimited voice",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Australia Unlimited Data with calls 15Days",
+    "sellingcost": 33.9,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": "Unlimited",
+    "c_r_id": "6",
+    "countryname": "Australia"
+  }
+]

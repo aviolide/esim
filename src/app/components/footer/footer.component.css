@@ -1,0 +1,14 @@
+@media screen and (max-width: 668px) {
+    footer .col-md-3 {
+        padding-bottom: 0;
+    }
+    footer a {
+        font-size: 12px;
+    }
+    footer h2 {
+        margin-bottom: 5px;
+    }
+    .social {
+        margin-bottom: 30px;
+    }
+}

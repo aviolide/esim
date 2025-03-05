@@ -1,0 +1,1248 @@
+@media (max-width: 768px) {
+  .home .hero {
+    background-size: cover;
+  }
+  .hero {
+    h1 {
+      font-size: 24px;
+      line-height: 36px;
+      max-width: 330px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 22px;
+    }
+  }
+  .checklist-modal .checkbox-container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .checklist-modal ol li {
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 6px;
+  }
+  .testimonial_wrap {
+    .row {
+      justify-content: center;
+    }
+    img {
+      max-width: 40px;
+    }
+    .heading {
+      margin-bottom: 0;
+    }
+  }
+  .customer-loves-notes {
+    padding-bottom: 0;
+  }
+  .why-choose-us .widget h3 {
+    font-size: 20px;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main-banner .wrapper1 {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 50px;
+    gap: 10px;
+    .image {
+      max-width: 80%;
+      margin: auto;
+      display: flex;
+    }
+    .text {
+      font-size: 24px;
+      line-height: 38px;
+    }
+    .esim-text {
+      margin-bottom: auto;
+      margin-left: 0;
+    }
+  }
+  .free-esim1 .wrapper1 {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    padding-bottom: 40px;
+    .image {
+      margin-bottom: -50px;
+    }
+    .btns {
+      justify-content: center;
+    }
+    h2 {
+      line-height: 40px;
+    }
+  }
+  .faq-details {
+    padding: 20px;
+    h1 {
+      font-size: 17px;
+      line-height: 28px;
+    }
+    p,
+    .faq-details p *,
+    .faq-details span {
+      font-size: 13px;
+    }
+  }
+  .faqs .search-header {
+    h1 {
+      font-size: 26px;
+    }
+    .w-100 {
+        width: auto;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .testimonial_wrap {
+    padding-bottom: 0px;
+    &.mobile-version {
+      display: block;
+      padding-top: 0;
+      &::before {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+      }
+    }
+    &.desktop-version::before {
+      display: none;
+    }
+    .right-col {
+      display: none;
+    }
+    .card {
+      box-shadow: none;
+    }
+  }
+  .benefits-api .trust .item ul li {
+    width: 100%;
+  }
+  .multi-buttons-hub .join-btn,
+  .multi-buttons-hub .learn-more {
+    padding: 5px 10px;
+    font-size: 13px;
+    min-width: auto;
+  }
+  .main-banner .text {
+    font-size: 30px;
+  }
+  .main-banner .esim-text {
+    max-width: 200px;
+  }
+  .free-esim1 .btns {
+    flex-wrap: wrap;
+    a.second {
+      margin-left: 0px !important;
+      margin-top: 20px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .user-types {
+    .info-text {
+      &.tooltip1 {
+        .text {
+          left: auto;
+          right: 0;
+        }
+      }
+      .text {
+        left: auto;
+        right: 0;
+        background-color: #fff;
+        padding: 7px;
+        border-radius: 12px;
+        min-width: 269px;
+        border: 1px solid #cecece;
+        background: #fff;
+        margin-top: 22px;
+        opacity: 0;
+      }
+      &:hover {
+        .text {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  #esim-plans {
+    p {
+      font-size: 13px;
+    }
+    .btn.buy-now {
+      padding: 8px 13px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .data-plans-ac {
+    .left {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  .family-plus-plans .card {
+    margin-bottom: 30px;
+  }
+  .result-row.monthly li div {
+    flex-wrap: wrap;
+  }
+  .why-join-esimexpress {
+    .featured-img {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .user-types {
+    ul {
+      min-width: auto;
+    }
+    span {
+      font-size: 11px;
+      line-height: 15px;
+    }
+  }
+  .how-it-works h3,
+  h3.sec-heading {
+    font-size: 25px;
+    line-height: 41px;
+  }
+  .testimonial_wrap .owl-item.center .testimonial-box {
+    width: 100%;
+    margin: auto !important;
+  }
+  .esim-countries {
+    .cols {
+      width: 33.33%;
+    }
+  }
+  .steps {
+    .filters {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      margin-right: 0 !important;
+    }
+  }
+  .user-types {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: -26px;
+    justify-content: end;
+  }
+  .data-plan-list p {
+    line-height: 22px;
+  }
+  .sorting-tabs {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .esim-countries {
+    .cols {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero.main-banner {
+    h1 {
+      font-size: 22px !important;
+      line-height: 35px !important;
+    }
+    h2 {
+      font-size: 19px;
+      line-height: 24px;
+    }
+    &.banner-text {
+      text-align: center !important;
+      h2 {
+        font-size: 19px;
+        line-height: 30px;
+        max-width: 300px;
+        margin: auto;
+      }
+      h3 {
+        font-size: 18px;
+        line-height: 30px;
+      }
+      h4 {
+        font-size: 18px;
+      }
+
+      .popular-flags .view-all-link {
+        font-size: 14px;
+      }
+      .box2 {
+        h4 {
+          padding: 14px 15px;
+        }
+      }
+      .btns {
+        flex-wrap: wrap;
+        a {
+          font-size: 14px;
+          margin-bottom: 20px;
+          margin-left: 10px;
+          padding: 10px 14px;
+          padding-right: 40px;
+          img {
+            max-width: 25px;
+          }
+        }
+      }
+    }
+    &.main-banner {
+      .arrow {
+        right: 118px;
+        bottom: -25px;
+        top: auto;
+      }
+      .cta-btn1 {
+        padding: 10px 10px;
+        font-size: 13px;
+        padding-right: 48px;
+        img {
+          right: 15px;
+          top: 10px;
+          width: 28px;
+        }
+      }
+      .hero-img {
+        margin-top: 0;
+      }
+    }
+  }
+  .home-page {
+    .header {
+      display: none;
+    }
+  }
+  .step3 .plan-header {
+    flex-wrap: wrap;
+  }
+  header {
+   
+    .esimexpress-logo {
+      margin: 6px auto 0 !important;
+      display: block;
+    }
+  }
+  .data-plans {
+    padding-top: 0px;
+  }
+  .reviews {
+    display: none;
+  }
+  .features {
+    display: flex;
+    overflow-x: auto;
+    grid-gap: 5px;
+    justify-content: start;
+  }
+  .tipsinfo {
+    left: -156px;
+  }
+  .page-banner {
+    background-color: #000;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h1 {
+      font-size: 25px;
+      line-height: 25px;
+    }
+  }
+  .eid-steps {
+    margin-bottom: 10px;
+    .box {
+      flex-wrap: wrap;
+    }
+  }
+  .page-header1 {
+    display: block;
+    .logo {
+      background-color: #f1f1f1;
+    }
+  }
+  .cta-app .download-app img {
+    max-width: 250px;
+  }
+  .page-wrap {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+  .page-title {
+    padding: 10px 0 20px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05),
+      0 10px 30px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    h1 {
+      font-size: 22px;
+    }
+  }
+  .trust-pilot {
+    position: relative;
+    top: auto;
+    transform: none;
+    left: auto;
+    div {
+      background-color: #f1f1f1;
+    }
+  }
+  .qr-wrap {
+    padding: 0px 0;
+  }
+  .country_tabs {
+    overflow-x: auto;
+    display: flex;
+    margin: 30px auto 0;
+    li {
+      background: transparent;
+    }
+  }
+  .text-content p {
+    font-size: 12px;
+  }
+  .no-padding-mobile {
+    padding: 0;
+  }
+  .widget-nav,
+  .page-name {
+    display: block;
+  }
+  .mobile-shadow {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05),
+      0 10px 30px 0 rgba(0, 0, 0, 0.1);
+  }
+  .sticky-nav {
+    display: flex;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .registerbg {
+    background-image: none;
+  }
+  .header {
+    border: 0;
+  }
+  .topbar {
+    box-shadow: none;
+    padding-bottom: 15px;
+    .rtlnk {
+      display: none;
+    }
+    .navlnk,
+    .suppoort-lnks {
+      display: none;
+    }
+  }
+  .no-padding-mobile {
+    padding: 0;
+  }
+  // .filter-btn {
+  //     margin-top: 18px;
+  //     border-radius: 5px;
+  //     padding: 8px 14px;
+  // }
+  .searchbar .autocomplete-container {
+    .input-container {
+      margin-top: 15px;
+      input {
+        padding: 3px 40px;
+      }
+      &::before {
+        top: 13px;
+      }
+    }
+  }
+  .tooltip .tooltiptext {
+    white-space: nowrap;
+    right: 0;
+    margin-top: 19px;
+  }
+  .promo-box-area {
+    margin: 0 auto;
+    padding: 5px 0 10px;
+  }
+  .esim-plans {
+    border: 0;
+    margin: 0 auto;
+    padding: 8px 10px;
+    .data-plans-ac {
+      padding: 8px 10px;
+    }
+    &.active {
+      border-radius: 0;
+      background-color: #f8f8fc;
+      border-color: #f8f8fc;
+    }
+    .advanced-filter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  li.monthly.activetab a {
+    color: #ff8a00 !important;
+    border: #ff8a00 1px solid !important;
+  }
+  // .custom-filter {
+  //     position: absolute;
+  //     top: 2px;
+  //     width: 100%;
+  //     text-align: right;
+  // }
+  #esim-plans {
+    .container,
+    .table-plans {
+      padding: 0;
+    }
+    .box {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+    }
+    .data-plan-list {
+      .box {
+        justify-content: space-between;
+      }
+    }
+    .plan-header {
+      flex-wrap: wrap;
+    }
+    .heading-box {
+      margin-bottom: 20px;
+    }
+    .express-vpn {
+      margin-top: 10px;
+    }
+    .arrow-botm i {
+      font-size: 17px;
+      color: #000;
+      border: #ccc 2px solid;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+    }
+    .filter-tabs,
+    .sorting-tabs {
+      width: 100%;
+      justify-content: center;
+      margin: 15px auto;
+    }
+    .plan-switch {
+      margin: 20px 10px 0;
+      margin-right: 47px;
+      z-index: 999;
+    }
+  }
+  .custom-filter .wrap {
+    border: 1px solid #d5d5d5;
+    background-color: #f7f8ff;
+    margin-top: 10px;
+    box-shadow: none;
+  }
+  .text-content {
+    border-radius: 0;
+  }
+  .logos-company img {
+    max-height: 40px;
+  }
+  .promo-box-contain,
+  .promo-box-area:before {
+    display: none;
+  }
+  .trust-pilot iframe {
+    display: none;
+    min-height: 40px !important;
+  }
+  ul.country_tabs a {
+    margin-bottom: 22px;
+  }
+  .plan-switch {
+    margin-left: auto;
+  }
+  .plan-header {
+    .plan-switch {
+      margin: 20px auto 0;
+      z-index: 999;
+    }
+    .btn.continue-btn.clear-btn {
+      position: relative;
+      top: auto;
+      margin-bottom: 20px;
+    }
+  }
+  #productModal {
+    margin-bottom: 60px;
+    .top {
+      padding: 20px 5px 5px;
+    }
+    .bottom {
+      padding: 25px 10px 10px;
+    }
+    .modal-content {
+      border-radius: 0;
+    }
+    .modal-dialog {
+      margin: 0;
+    }
+    .arrow {
+      display: none;
+    }
+    .row {
+      width: 100%;
+      float: initial;
+      margin: 0;
+    }
+    .buy-btn button {
+      margin: 25px auto;
+    }
+    .shadow {
+      max-height: initial;
+      margin-bottom: 30px;
+      min-height: auto;
+    }
+    .related-plans {
+      .wrap {
+        max-width: 100%;
+      }
+      .owl-nav {
+        display: none;
+      }
+    }
+    .heading {
+      margin: 20px auto 10px;
+    }
+    img.featured {
+      margin: 0 0px 10px !important;
+    }
+  }
+  .data-plans-first {
+    .plan-switch {
+      margin-top: 10px;
+    }
+  }
+  .data-plan-list {
+    display: block;
+    .left {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .result-info.desktop {
+    display: none;
+  }
+  .data-plan-list.mobile {
+    button {
+      background: #dadada4d;
+      color: #000;
+      padding: 8px 13px;
+      display: none;
+      width: 100%;
+    }
+  }
+  .popupinfo {
+    padding: 0px 0;
+  }
+  footer {
+    padding-top: 20px;
+    padding-bottom: 70px;
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+    .botmcopy {
+      background-color: transparent;
+      padding: 25px 0;
+    }
+    .botom-sec {
+      display: none;
+    }
+  }
+  .login-area input {
+    padding: 20px 10px;
+    border: #ccc 1px solid;
+  }
+  .login_header {
+    margin-top: 0;
+  }
+  .login-heading {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .login-area ul.social-icon {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .account-bg h1 {
+    display: none;
+  }
+  .nav-sidebar {
+    display: none;
+  }
+  .acount-wrap {
+    background-color: #fff;
+  }
+  .selected-plan {
+    padding: 20px 0px 30px;
+    background-color: inherit;
+    .plan-box {
+      margin: 60px auto 20px;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    .selected-plan-header {
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 16px;
+      }
+      span {
+        display: inline;
+      }
+    }
+    .plans-info {
+      padding: 20px 40px 0px 40px;
+    }
+    .selected-icon {
+      img {
+        max-width: 40px;
+      }
+    }
+  }
+  .header-ticket-list {
+    margin: 15px 20px;
+    padding: 20px;
+  }
+  .widget {
+    padding: 20px 10px !important;
+  }
+  table {
+    &.v1 * {
+      font-size: 12px;
+    }
+  }
+  .esim-countries .box {
+    padding: 15px 10px;
+    margin: 8px auto;
+  }
+  .process-steps {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .process {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: left;
+    &::before {
+      left: 6px;
+      height: calc(100% - 90px);
+      width: 1px;
+      top: 35px;
+    }
+    &::after {
+      left: -1px;
+      transform: none;
+      top: 23px;
+    }
+    .item {
+      padding-left: 30px;
+      &::before {
+        left: 5px;
+        top: 18px;
+      }
+      &::after {
+        left: -1px;
+        transform: none;
+        top: 23px;
+      }
+    }
+  }
+  .api-partner-bottom-div button {
+    display: none;
+  }
+  .voucher-program .benefits .featured-img.second {
+    margin-top: 0px;
+  }
+  .hub-header {
+    .featured {
+      margin-bottom: 30px;
+    }
+    .star1,
+    .star2,
+    .star3 {
+      display: none;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      line-height: 32px;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
+  .hub-list {
+    h2 {
+      margin-top: 20px;
+    }
+    .row {
+      justify-content: center;
+    }
+  }
+  .benefits-api {
+    .text {
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 34px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+    .trust {
+      margin-top: 40px;
+    }
+    .stats {
+      flex-wrap: wrap;
+      .item {
+        width: 100%;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        .count1 {
+          font-size: 25px;
+        }
+        .title1 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .ap-cta.hub h5 {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .ap-cta button {
+    font-size: 16px;
+  }
+  .behind-faces .box.peter {
+    margin-top: 0;
+  }
+  .behind-faces {
+    .box {
+      &.second,
+      &.third {
+        margin-top: 40px;
+      }
+    }
+    label {
+      color: #fff;
+    }
+  }
+  /* Free ESIM */
+
+  .free-esim {
+    .hero2 {
+      .vector {
+        display: none;
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 44px;
+      }
+    }
+    .heading3 {
+      font-size: 24px;
+      line-height: 34px;
+      span {
+        display: none;
+      }
+    }
+    .top-ups-plans {
+      .popular-text {
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  }
+  .page-header2 {
+    ul {
+      display: inline-block;
+      padding-left: 11px;
+    }
+    .logo {
+      margin-top: 0;
+    }
+    .for-mobile {
+      display: block;
+    }
+
+    .left {
+      display: none;
+      img {
+        display: none;
+      }
+      position: absolute;
+      background-color: #fff;
+      z-index: 99;
+      left: 0;
+      width: 100%;
+      top: 60px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #acacac;
+      li {
+        padding-bottom: 10px;
+      }
+    }
+    .right {
+      position: absolute;
+      right: 14px;
+      top: 22px;
+    }
+    .logo {
+      margin-left: 20px;
+    }
+
+    .toggle {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      z-index: 99;
+    }
+    &.active {
+      .left {
+        display: block;
+      }
+    }
+  }
+  #countriesModal {
+    .row {
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
+    .modal-dialog {
+      width: auto;
+    }
+    .modal-body {
+      float: none;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .home .cristmas-banner .cta-btn {
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0px auto;
+    line-height: 26px;
+    transform: none;
+    padding: 12px 45px 12px 12px;
+    position: relative;
+    left: auto;
+    bottom: auto;
+  }
+  ul.tab_default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    li a {
+      padding: 7px 13px;
+      border-radius: 5px;
+      font-size: 13px;
+      line-height: 20px;
+      .icon {
+        display: none;
+      }
+      span {
+        margin: 0;
+      }
+    }
+  }
+  .express-vpn .info-text {
+    top: 67px;
+    right: 0;
+  }
+  .features .box img {
+    max-width: 45px;
+    font-size: 13px;
+  }
+  .data-plans h1 {
+    font-size: 26px;
+    line-height: 34px;
+    margin-bottom: 10px;
+  }
+  .trust-section div {
+    display: block;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 19px;
+    img {
+      margin-bottom: 4px;
+    }
+  }
+  .why-join-esimexpress p {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1150px) {
+  .plan-header {
+    .top {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .lodgerin,
+  #esim-plans .right {
+    flex-wrap: wrap;
+  }
+  #esim-plans .right {
+    justify-content: center;
+  }
+  .alertModal .modal-dialog {
+    zoom: 80%;
+    margin-top: 50px;
+  }
+  #alertModal {
+    .modal-dialog {
+      max-width: 320px;
+      margin: 0;
+    }
+    img {
+      max-width: 320px;
+    }
+    .modal-content {
+      margin-left: auto;
+      max-width: 320px;
+      padding-top: 105px;
+    }
+    .modal-body {
+      max-width: 252px;
+      float: none;
+    }
+  }
+  .why-choose-us {
+    .widget {
+      flex-wrap: wrap;
+      max-width: 100%;
+      .text {
+        max-width: 100%;
+      }
+      .icon {
+        text-align: left;
+        img {
+          max-height: 46px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .alertModal .modal-dialog {
+    zoom: 67%;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero1 {
+    background-color: #083432;
+    background-image: none;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    min-height: auto;
+  }
+  .cristmas-banner .download-on {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .esim-process {
+    .box {
+      margin-bottom: 30px;
+    }
+  }
+  .hero1 .app-img {
+    margin-top: 30px;
+  }
+  .uk-page {
+    .header1 {
+      padding: 0;
+      .left {
+        display: none;
+      }
+      .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav.right {
+        display: flex;
+        justify-content: center;
+        float: none;
+      }
+    }
+  }
+  .auth-screen {
+    .grid.wrapper {
+      grid-template-columns: auto;
+    }
+  }
+  header {
+    .dropdown-menu {
+      position: absolute !important;
+      width: 100;
+      width: 100%;
+      right: 0;
+      box-shadow: -3px 3px 8px 4px rgb(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .hero {
+    min-height: auto;
+  }
+  .hero1 {
+    h1 {
+      font-size: 26px;
+      line-height: 38px;
+      margin-bottom: 10px;
+      max-width: 300px;
+      margin: 0 auto 10px;
+      img {
+        margin-left: 10px;
+        width: 36px;
+      }
+    }
+    .hero h2 {
+      font-size: 23px;
+      line-height: 34px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 25px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 15px;
+      margin: 0px 0;
+      line-height: 27px;
+    }
+    .btn {
+      font-size: 13px;
+    }
+  }
+  .searchbar {
+    padding: 10px 20px 5px;
+  }
+  .cristmas-banner {
+    background-position: center;
+    .welcome {
+      font-size: 20px;
+      line-height: 32px;
+    }
+    cristmas-banner .ring-text {
+      font-size: 20px;
+      line-height: 26px;
+      max-width: 233px;
+    }
+  }
+  .uk-page .main-heading1 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .esim-plans-price .plans-card .top {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .esim-plans-price .plans-card .sub-text {
+    font-size: 13px;
+  }
+  .uk-page .checklist ul li {
+    font-size: 14px;
+  }
+  .uk-page .main-heading1 {
+    margin-bottom: 10px;
+  }
+  .checklist {
+    img {
+      margin-bottom: 30px;
+    }
+  }
+  .travel-at-btn {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  .uk-page .data-usages ul.benefits li {
+    font-size: 14px;
+  }
+  .uk-page .data-usages ul.checks li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .uk-page .main-heading {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .esim-process .box .box-heading {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .esim-process .box p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .esim-process .instruction {
+    margin: 10px 0 20px;
+  }
+  .hero1 .value-added-services .logos {
+    margin-left: 0px;
+  }
+  .cta-app h3 {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 10px;
+  }
+  .esim-plans-price h4 {
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 25px;
+  }
+}

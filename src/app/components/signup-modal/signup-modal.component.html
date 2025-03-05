@@ -1,0 +1,103 @@
+<!-- Login  Modal -->
+<div
+  class="modal fade qr-code-popup login-modal"
+  id="loginModal"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button
+        type="button"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        class="absolute top-2 right-2 z-50"
+        #closebutton
+      >
+        <img src="assets/images/cancel.png" class="cancel" alt="cancel icon" title="cancel icon" />
+      </button>
+      <div class="modal-body">
+        <div>
+          <img
+            src="/assets/images/esimexpresslogo.png"
+            class="img-fluid logo1"
+            alt="ESimExpress App Logo"
+            title="cancel icon"
+            width="121px"
+          />
+          <h3>Get your eSIM in seconds, please <br />create an account.</h3>
+          <!-- Guest Login-->
+          <div *ngIf="!isGuestForm">
+            <button class="social-login" (click)="isGuestForm = true">
+              Continue as Guest
+            </button>
+          </div>
+
+          <div
+            class="login-form space-y-4"
+            [formGroup]="guestForm"
+            *ngIf="isGuestForm"
+          >
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              placeholder="Email"
+              autocomplete="off"
+              name="email"
+            />
+            <input
+              type="email"
+              formControlName="confirmEmail"
+              class="form-control"
+              placeholder="Confirm Email"
+              autocomplete="off"
+              name="email1"
+            />
+            <div
+              *ngIf="guestForm.hasError('emailMismatch') && guestForm.touched"
+              class="error-message"
+            >
+              Email and Confirm Email must match.
+            </div>
+
+            <p class="error-message" *ngIf="errorMessage !== null">
+              {{ errorMessage }}
+            </p>
+
+            <button
+              class="btn btn-primary w-full mb-4"
+             
+              (click)="guestCheckout()"
+            >
+              Submit
+            </button>
+          </div>
+
+          <div class="or">
+            <span>Or</span>
+          </div>
+          <div>
+            <button class="social-login google" (click)="loginWithGoogle()">
+              <img src="assets/images/google-logo.png" />
+              Sign up with Google
+            </button>
+            <button class="social-login facebook" (click)="loginWithFacebook()">
+              <img src="assets/images/facebook-logo.png" alt="" />
+              Sign up with Facebook
+            </button>
+          </div>
+
+          <div class="text-center font-medium text-[14px]">
+            Already have an account? <button type="button" class="btn cursor-pointer hover:underline text-[#ff8a00] login-btn-link" (click)="login()">Login</button>
+          </div>
+          <div class="text-center small-text">
+            By creating an account you agree with our Terms of Service, Privacy
+            Policy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

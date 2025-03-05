@@ -1,0 +1,40 @@
+<div class="acount-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <app-user-navigation></app-user-navigation>
+      </div>
+      <div class="col-md-8">
+        <div class="widget">
+          <table class="table v1">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Data</th>
+                <th>Validity</th>
+                <th>Amount ($)</th>
+                <th>Order Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of response">
+                <td class="nowrap">
+                  <img
+                    src="{{ 'https://www.esim.su/' + x.countryimage }}"
+                    width="20px"
+                    alt=""
+                  />
+                  {{ x.countryname }}
+                </td>
+                <td>{{ x.dataallowance }}{{ x.dataallowancetype }}</td>
+                <td>{{ x.vaildity }}Days</td>
+                <td>{{ x.sellingcost }}</td>
+                <td class="nowrap">{{ x.PurchaseDate }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

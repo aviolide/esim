@@ -1,0 +1,348 @@
+<div class="esim-seo-content">
+  <section
+    class="bg-image section1"
+    style="background-image: url('/assets/images/bg1.png')"
+    *ngIf="content?.heading_1"
+  >
+    <div class="container">
+      <div>
+        <h2 class="title" *ngIf="content?.heading_1">
+          {{ content?.heading_1 }}
+        </h2>
+        <p  *ngIf="content?.content_heading_1">
+          {{ content?.content_heading_1 }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section2" *ngIf="content?.heading_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h4 class="title" *ngIf="content?.heading_2">
+            {{ content?.heading_2 }}
+          </h4>
+          <p *ngIf="content?.content_heading_2 ">
+            {{ content?.content_heading_2 }}
+          </p>
+        </div>
+        <div class="col-md-5 text-right">
+          <img
+            src="/assets/images/banner-small.png"
+            class="img-fluid"
+            alt="Traveler with ESimExpress eSIM"
+            title="Traveler with ESimExpress eSIM"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section3" *ngIf="content?.heading_3">
+    <div class="container">
+      <div class="row main-row">
+        <div class="col">
+          <h2 class="title" *ngIf="content?.heading_3">{{ content?.heading_3 }}</h2>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-4" *ngIf="content?.subheading_1_heading_3">
+          <div class="box">
+            <h4>{{ content?.subheading_1_heading_3 }}</h4>
+            <p>{{ content?.content_subheading_1_heading_3 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4"  *ngIf="content?.subheading_2_heading_3">
+          <div class="box">
+            <h4>{{ content?.subheading_2_heading_3 }}</h4>
+            <p>{{ content?.content_subheading_2_heading_3 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4"  *ngIf="content?.subheading_3_heading_3">
+          <div class="box">
+            <h4>{{ content?.subheading_3_heading_3 }}</h4>
+            <p>{{ content?.content_subheading_3_heading_3 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4"  *ngIf="content?.subheading_4_heading_3">
+          <div class="box">
+            <h4>{{ content?.subheading_4_heading_3 }}</h4>
+            <p>{{ content?.content_subheading_4_heading_3 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4"  *ngIf="content?.subheading_5_heading_3">
+          <div class="box">
+            <h4>{{ content?.subheading_5_heading_3 }}</h4>
+            <p>{{ content?.content_subheading_5_heading_3 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section4 pt-12" *ngIf="content?.heading_4">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <h2 class="title">{{ content?.heading_4 }}</h2>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="box" *ngIf="content?.subheading_1_heading_4">
+            <h4>{{ content?.subheading_1_heading_4 }}</h4>
+            <p>{{ content?.content_subheading_1_heading_4 }}</p>
+          </div>
+
+          <div class="box" *ngIf="content?.subheading_2_heading_4">
+            <h4>{{ content?.subheading_2_heading_4 }}</h4>
+            <p>{{ content?.content_subheading_2_heading_4 }}</p>
+          </div>
+
+          <div class="box" *ngIf="content?.subheading_3_heading_4">
+            <h4>{{ content?.subheading_3_heading_4 }}</h4>
+            <p>{{ content?.content_subheading_3_heading_4 }}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="/assets/images/group-banner.png"
+            class="img-fluid featured"
+            alt="Group Travel with ESimExpress eSIM"
+            title="Group Travel with ESimExpress eSIM"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section5 layout2" >
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <h3 class="title">{{ content?.heading_5 }}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" *ngIf="content?.subheading_1_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_1_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_1_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_2_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_2_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_2_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_3_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_3_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_3_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_4_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_4_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_4_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_5_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_5_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_5_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_6_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_6_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_6_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_7_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_7_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_7_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_8_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_8_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_8_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_9_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_9_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_9_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_10_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_10_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_10_heading_5 }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" *ngIf="content?.subheading_11_heading_5">
+          <div class="box">
+            <h4>{{ content?.subheading_11_heading_5 }}</h4>
+            <p>{{ content?.content_subheading_11_heading_5 }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section6" *ngIf="content?.heading_6">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h4 class="title1">{{content?.heading_6}}</h4>
+          <p>
+           {{content?.content_subheading_6_heading_5}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="layout2 faq-esim" *ngIf="content?.heading_7">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <h3 class="title">{{content?.heading_7}}</h3>
+        </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="accordion-item mb-4">
+              <h2 class="accordion-header" [id]="'heading' + '1'">
+                <button
+                  class="accordion-button collapsed text-sm font-medium bg-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#' + 'collapse' + '1'"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  {{ content?.content_1_heading_7 }}
+                </button>
+              </h2>
+              <div
+                [id]="'collapse' + '1'"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div [innerHTML]="content?.content_2_heading_7"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="accordion-item mb-4">
+              <h2 class="accordion-header" [id]="'heading' + '2'">
+                <button
+                  class="accordion-button collapsed text-sm font-medium bg-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#' + 'collapse' + '2'"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  {{ content?.content_3_heading_7 }}
+                </button>
+              </h2>
+              <div
+                [id]="'collapse' + '2'"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div [innerHTML]="content?.content_4_heading_7"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="accordion-item mb-4">
+              <h2 class="accordion-header" [id]="'heading' + '3'">
+                <button
+                  class="accordion-button collapsed text-sm font-medium bg-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#' + 'collapse' + '3'"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  {{ content?.content_5_heading_7 }}
+                </button>
+              </h2>
+              <div
+                [id]="'collapse' + '3'"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div [innerHTML]="content?.content_6_heading_7"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="accordion-item mb-4">
+              <h2 class="accordion-header" [id]="'heading' + '4'">
+                <button
+                  class="accordion-button collapsed text-sm font-medium bg-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#' + 'collapse' + '4'"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  {{ content?.content_7_heading_7 }}
+                </button>
+              </h2>
+              <div
+                [id]="'collapse' + '4'"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div [innerHTML]="content?.content_8_heading_7"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

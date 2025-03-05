@@ -1,0 +1,539 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="bg-white right">
+          <app-search2
+            [closeSearch]="parentCloseSearch"
+            (searchClosed)="onSearchClosed()"
+          ></app-search2>
+          <div class="esim-list">
+            <!-- <div class="mt-2">
+              <app-family-plan-discount></app-family-plan-discount>
+            </div> -->
+          </div>
+
+          <ng-container *ngIf="!parentCloseSearch">
+            <ul class="nav nav-tabs plan-type" role="tablist">
+              <!-- All Tab (Desktop)-->
+
+              <li class="nav-item">
+                <button
+                  [class.active]="activeTab === 'All'"
+                  data-bs-toggle="tab"
+                  data-bs-target="#all"
+                  type="button"
+                  (click)="handleTabChange('All')"
+                  (keyup.enter)="handleTabChange('All')"
+                >
+                  All
+                </button>
+              </li>
+
+              <!-- Other Tabs (Desktop)-->
+              <ng-container *ngFor="let section of plans; index as i">
+                <li class="nav-item" *ngIf="section?.data?.length > 0">
+                  <button
+                    data-toggle="tab"
+                    [attr.data-bs-target]="'#section' + i"
+                    [id]="'#section' + i"
+                    [class.active]="section.title === activeTab"
+                    (click)="handleTabChange(section.title)"
+                    (keyup.enter)="handleTabChange(section.title)"
+                  >
+                    {{ section.title }}
+                  </button>
+                </li>
+              </ng-container>
+            </ul>
+
+            <div class="filters-for-mobile inline-flex md:hidden">
+              <div class="sort-by-options">
+                <button
+                  [class.active]="activeFilter === 'cheapest'"
+                  (click)="cheapest('cheapest')"
+                >
+                  Cheapest
+                  <img
+                    src="assets/images/x-icon.svg"
+                    alt="cancel icon"
+                    title="cancel icon"
+                    *ngIf="activeFilter === 'cheapest'"
+                  />
+                </button>
+                <button
+                  [class.active]="activeFilter === 'largestGB'"
+                  (click)="largetGB('largestGB')"
+                >
+                  Largest GB
+                  <img
+                    src="assets/images/x-icon.svg"
+                    alt="cancel icon"
+                    title="cancel icon"
+                    *ngIf="activeFilter === 'largestGB'"
+                  />
+                </button>
+                <button
+                  [class.active]="activeFilter === 'longestValidity'"
+                  (click)="longestValidity('longestValidity')"
+                >
+                  Longest Validity
+                  <img
+                    src="assets/images/x-icon.svg"
+                    alt="cancel icon"
+                    title="cancel icon"
+                    *ngIf="activeFilter === 'longestValidity'"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <div class="tab-content plan-list">
+              <div
+                id="all"
+                [ngClass]="{ 'tab-pane': true, active: activeTab === 'All' }"
+              >
+                <ng-container *ngFor="let section of plans; index as i">
+                  <h3 class="section-title" *ngIf="section?.data?.length > 0">
+                    {{ section.title }}
+                    <img
+                      src="assets/images/info-tooltip.svg"
+                      class="tooltip-btn"
+                      alt="tooltip icon"
+                      title="tooltip icon"
+                    />
+                    <div
+                      class="tooltip-text"
+                      *ngIf="isTooltipVisible(section.title)"
+                    >
+                      {{ getTooltipText(section.title) }}
+                    </div>
+                  </h3>
+                  <div class="desktop1" *ngIf="section?.data?.length > 0">
+                    <div
+                      class="plan"
+                      (click)="goToDetails(plan.PlanName)"
+                      (keydown.enter)="goToDetails(plan.PlanName)"
+                      tabindex="0"
+                      *ngFor="let plan of section.data; index as i"
+                    >
+                      <div
+                        (click)="goToDetails(plan.PlanName)"
+                        (keydown.enter)="goToDetails(plan.PlanName)"
+                        tabindex="0"
+                      >
+                        <p *ngIf="plan.BestValue == 1">
+                          <img
+                            src="assets/images/best-seller.gif"
+                            alt="Best seller"
+                            title="Best seller"
+                            class="img-fluid gif"
+                            style="max-width: 100px"
+                          />
+                        </p>
+                        <p *ngIf="plan.TopSeller == 1">
+                          <img
+                            src="assets/images/top-selling.gif"
+                            alt="Top Selling"
+                            title="Top Selling"
+                            class="img-fluid gif"
+                            style="max-width: 100px"
+                          />
+                        </p>
+                        <img
+                          [src]="
+                            plan.OperatorLogo
+                              ? operatorLogo + plan.OperatorLogo + '.png'
+                              : plan.PlanOperator
+                              ? operatorLogo + plan.PlanOperator + '.png'
+                              : eSimExpressLogo
+                          "
+                          class="img-fluid operator-logo"
+                          (error)="onImageError($event)"
+                          alt="Operator Logo"
+                          title="Operator Logo"
+                        />
+                      </div>
+                      <div class="plan-name1">{{ plan.PlanName }}</div>
+                      <div>
+                        <div class="cell-label">Validity</div>
+                        <div>{{ plan.Vaildity }} {{ plan.vailditytype }}</div>
+                      </div>
+                      <div>
+                        <div class="cell-label">Data</div>
+                        <div>
+                          {{ plan.DataAllowance }} {{ plan.DataAllowanceType }}
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="flex items-center"
+                          *ngIf="plan.PlanClass === 'voicedata'"
+                        >
+                          <img
+                            src="assets/icons/call-icon2.png"
+                            alt="call icon"
+                            title="call icon"
+                            width="18"
+                            style="margin-right: 6px"
+                          />
+                          <div
+                            tabindex="0"
+                            (keydown.enter)="goToDetails(plan.PlanName)"
+                            (click)="goToDetails(plan.PlanName)"
+                          >
+                            Voice <br />
+                            Minutes
+                          </div>
+                        </div>
+                        <div *ngIf="plan.PlanClass === 'data'">-</div>
+                      </div>
+                      <div>
+                        <button
+                          class="cursor-pointer"
+                          (click)="goToDetails(plan.PlanName)"
+                          (keydown.enter)="goToDetails(plan.PlanName)"
+                          tabindex="0"
+                        >
+                          $ {{ plan.SellingCost }} USD
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevron-right"
+                          >
+                            <path d="m9 18 6-6-6-6" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Mobile -->
+                  <div class="mobile1">
+                    <div class="plan" *ngFor="let plan of section.data">
+                      <div>
+                        <p *ngIf="plan.BestValue == 1">
+                          <img
+                            src="assets/images/best-seller.gif"
+                            alt="Best seller"
+                            title="Best seller"
+                            class="img-fluid gif"
+                            style="max-width: 100px"
+                          />
+                        </p>
+                        <p *ngIf="plan.TopSeller == 1">
+                          <img
+                            src="assets/images/top-selling.gif"
+                            alt="Top selling"
+                            class="img-fluid gif"
+                            style="max-width: 100px"
+                          />
+                        </p>
+                        <img
+                          [src]="
+                            plan.OperatorLogo
+                              ? operatorLogo + plan.OperatorLogo + '.png'
+                              : plan.PlanOperator
+                              ? operatorLogo + plan.PlanOperator + '.png'
+                              : eSimExpressLogo
+                          "
+                          class="img-fluid operator-logo"
+                          alt="Operator Logo"
+                          title="Operator Logo"
+                          (error)="onImageError($event)"
+                        />
+                      </div>
+                      <!-- <div class="plan-name1">{{ plan.PlanName }}</div> -->
+                      <div class="flex-box1">
+                        <div>
+                          <div class="cell-label">Validity</div>
+                          <div>{{ plan.Vaildity }} {{ plan.vailditytype }}</div>
+                        </div>
+                        <div>
+                          <div class="cell-label">Data</div>
+                          <div>
+                            {{ plan.DataAllowance }}
+                            {{ plan.DataAllowanceType }}
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          class="flex items-center text-center justify-content-center"
+                          *ngIf="plan.PlanClass === 'voicedata'"
+                        >
+                          <img
+                            src="assets/icons/call-icon2.png"
+                            alt="Call icon"
+                            title="Call icon"
+                            width="18"
+                            style="margin-right: 6px"
+                          />
+                          <div>Voice Minutes</div>
+                        </div>
+                      </div>
+                      <div>
+                        <button
+                          class="cursor-pointer"
+                          (click)="goToDetails(plan.PlanName)"
+                        >
+                          $ {{ plan.SellingCost }} USD
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevron-right"
+                          >
+                            <path d="m9 18 6-6-6-6" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+
+              </div>
+
+              <div
+                [id]="'section' + i"
+                [ngClass]="{
+                  'tab-pane': true,
+                  active: activeTab === section.title
+                }"
+                *ngFor="let section of plans; index as i"
+              >
+                <h3 class="section-title t1" *ngIf="section?.data?.length > 0">
+                  {{ section.title }}
+                  <img
+                    src="assets/images/info-tooltip.svg"
+                    class="tooltip-btn"
+                    alt="Tooltip icon"
+                    title="Tooltip icon"
+                  />
+                  <div
+                    class="tooltip-text"
+                    *ngIf="isTooltipVisible(section.title)"
+                  >
+                    {{ getTooltipText(section.title) }}
+                  </div>
+                </h3>
+
+                <!-- Desktop View List-->
+                <div class="desktop1">
+                  <div
+                    class="plan"
+                    (click)="goToDetails(plan.PlanName)"
+                    (keydown.enter)="goToDetails(plan.PlanName)"
+                    tabindex="0"
+                    *ngFor="let plan of section.data"
+                  >
+                    <div>
+                      <p *ngIf="plan.BestValue === 1">
+                        <img
+                          src="assets/images/best-seller.gif"
+                          class="img-fluid gif"
+                          alt="Best Seller"
+                          title="Best Seller"
+                          style="max-width: 100px"
+                        />
+                      </p>
+                      <p *ngIf="plan.TopSeller === 1">
+                        <img
+                          src="assets/images/top-selling.gif"
+                          class="img-fluid gif"
+                          alt="Top selling"
+                          style="max-width: 100px"
+                        />
+                      </p>
+                      <img
+                        [src]="
+                          plan.OperatorLogo
+                            ? operatorLogo + plan.OperatorLogo + '.png'
+                            : plan.PlanOperator
+                            ? operatorLogo + plan.PlanOperator + '.png'
+                            : eSimExpressLogo
+                        "
+                        class="img-fluid operator-logo"
+                        alt="Operator Logo"
+                        title="Operator Logo"
+                        (error)="onImageError($event)"
+                      />
+                    </div>
+                    <div class="plan-name1">{{ plan.PlanName }}</div>
+                    <div>
+                      <div class="cell-label">Validity</div>
+                      <div>{{ plan.Vaildity }} {{ plan.vailditytype }}</div>
+                    </div>
+                    <div>
+                      <div class="cell-label">Data</div>
+                      <div>
+                        {{ plan.DataAllowance }} {{ plan.DataAllowanceType }}
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="flex items-center"
+                        *ngIf="plan.PlanClass === 'voicedata'"
+                      >
+                        <img
+                          src="assets/icons/call-icon2.png"
+                          width="18"
+                          style="margin-right: 6px"
+                          alt="Call Icon"
+                          title="Call Icon"
+                        />
+                        <div
+                          tabindex="0"
+                          (keydown.enter)="goToDetails(plan.PlanName)"
+                        >
+                          Voice <br />
+                          Minutes
+                        </div>
+                      </div>
+                      <div *ngIf="plan.PlanClass === 'data'">-</div>
+                    </div>
+                    <div>
+                      <button
+                        class="cursor-pointer"
+                        (click)="goToDetails(plan.PlanName)"
+                      >
+                        $ {{ plan.SellingCost }} USD
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-chevron-right"
+                        >
+                          <path d="m9 18 6-6-6-6" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mobile View List-->
+                <div class="mobile1">
+                  <div class="plan" *ngFor="let plan of section.data">
+                    <div>
+                      <p *ngIf="plan.BestValue == 1">
+                        <img
+                          src="assets/images/best-seller.gif"
+                          class="img-fluid gif"
+                          alt="Best seller"
+                          title="Best seller"
+                          style="max-width: 100px"
+                        />
+                      </p>
+                      <p *ngIf="plan.TopSeller == 1">
+                        <img
+                          src="assets/images/top-selling.gif"
+                          class="img-fluid gif"
+                          alt="Top Selling"
+                          title="Top Selling"
+                          style="max-width: 100px"
+                        />
+                      </p>
+                      <img
+                        [src]="
+                          plan.OperatorLogo
+                            ? operatorLogo + plan.OperatorLogo + '.png'
+                            : plan.PlanOperator
+                            ? operatorLogo + plan.PlanOperator + '.png'
+                            : eSimExpressLogo
+                        "
+                        class="img-fluid operator-logo"
+                        alt="Operator Logo"
+                        title="Operator Logo"
+                        (error)="onImageError($event)"
+                      />
+                    </div>
+                    <!-- <div class="plan-name1">{{ plan.PlanName }}</div> -->
+                    <div class="flex-box1">
+                      <div>
+                        <div class="cell-label">Validity</div>
+                        <div>{{ plan.Vaildity }} {{ plan.vailditytype }}</div>
+                      </div>
+                      <div>
+                        <div class="cell-label">Data</div>
+                        <div>
+                          {{ plan.DataAllowance }} {{ plan.DataAllowanceType }}
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="flex items-center text-center justify-content-center"
+                        *ngIf="plan.PlanClass === 'voicedata'"
+                      >
+                        <img
+                          src="assets/icons/call-icon2.png"
+                          width="18"
+                          alt="Call icon"
+                          title="Call icon"
+                          style="margin-right: 6px"
+                        />
+                        <div>Voice Minutes</div>
+                      </div>
+                    </div>
+                    <div>
+                      <button
+                        class="cursor-pointer"
+                        (click)="goToDetails(plan.PlanName)"
+                      >
+                        $ {{ plan.SellingCost }} USD
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-chevron-right"
+                        >
+                          <path d="m9 18 6-6-6-6" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="parentCloseSearch">
+            <p class="text-center mt-3 font-medium text-md">
+              Please Search Country or regions
+            </p>
+          </ng-container>
+
+          <ng-container *ngIf="jsonData?.length === 0">
+            <p class="text-center font-semibold">No Plans Available</p>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-esim-country-content></app-esim-country-content>

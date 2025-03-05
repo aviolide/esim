@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1937,
+    "addinformation": "<p><strong>Package Details:</strong></p>\n\n<ul>\n\t<li>Connects to TIM network with 5G and 4G LTE speeds</li>\n\t<li>Unlimited Data</li>\n\t<li>Unlimited local calls Voice and 100 SMS</li>\n\t<li>Validity starts immediately after purchase</li>\n\t<li>Compatible with Andriod and iOS devices (check FAQ for compatible handsets)</li>\n\t<li>24*7 Business support and customer support service.</li>\n\t<li>APN:&nbsp;surf.br</li>\n\t<li>Validity: Starts immediately after purchasing QR code</li>\n</ul>\n\n<p><strong>Usage Restrictions:</strong></p>\n\n<ul>\n\t<li>E-SIM works only within Brazil</li>\n</ul>\n\n<p><strong>Supported Destination:</strong></p>\n\n<ul>\n\t<li>Brazil</li>\n</ul>\n",
+    "vaildity": "10",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Brazil Unlimited Data with calls 10 Days",
+    "meta_title": "0",
+    "operatorname": "Tim",
+    "dataallowance": "",
+    "dataallowancetype": "",
+    "voice_minute": "Unlimited voice",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Brazil Unlimited Data with calls 10 Days",
+    "sellingcost": 60.5,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": "Unlimited",
+    "c_r_id": "192",
+    "countryname": "Brazil"
+  }
+]

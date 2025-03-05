@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1278,
+    "addinformation": "<p><strong>Package Details:</strong></p>\n\n<ul>\n\t<li>4G&nbsp;high-speed data&nbsp;</li>\n\t<li>Unlimited local calls and Text</li>\n\t<li>Operates&nbsp;on Vodafone</li>\n\t<li>Validity starts immediately after purchase</li>\n</ul>\n\n<p><strong>Usage Restrictions</strong>:</p>\n\n<ul>\n\t<li>Outbound texts are not supported.</li>\n\t<li>International calls are not permitted within this package.</li>\n\t<li>Service may be blocked permanently if used outside designated countries&nbsp;</li>\n</ul>\n\n<p><strong>Supported roaming destinations:</strong></p>\n\n<ul>\n\t<li>Australia&nbsp;</li>\n</ul>\n",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Australia 10GB Data with Calls 30Days",
+    "meta_title": "0",
+    "operatorname": null,
+    "dataallowance": "10",
+    "dataallowancetype": "GB",
+    "voice_minute": "",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Australia 10GB Data with Calls 30Days",
+    "sellingcost": 15,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "6",
+    "countryname": "Australia"
+  }
+]

@@ -1,0 +1,111 @@
+<div class="page-title">
+    <h1>My eSims</h1>
+</div>
+
+<ng-container *ngIf="isLogin">
+    <div class="acount-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 left-side desktop">
+                    <app-user-navigation></app-user-navigation>
+                </div>
+                <div class="col-md-9" *ngIf="response.length> 0">
+                    <div class="account-info-base">
+                        <div class="form-bg-account">
+                            <h2>My eSim</h2>
+
+                            <div class="tickets-wrap">
+
+                                <div class="table-responsive table-custom desktop">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Country</th>
+                                            <th> Plan Type</th>
+                                            <th> Plan Name</th>
+                                            <th>Data</th>
+                                            <th>Validity</th>
+                                            <th>Purchase Date </th>
+                                            <th>Amount ($)</th>
+                                            <th>Details</th>
+                                        </tr>
+                                        <tr *ngFor="let x of response">
+                                            <td>{{x.countryname}}</td>
+                                            <td>{{x.Durationchar }}</td>
+                                            <td>{{x.planename}}</td>
+                                            <td>{{x.dataallowance}} {{x.dataallowancetype}} </td>
+                                            <td>{{x.vaildity}}</td>
+                                            <td>{{x.PurchaseDate}}</td>
+                                            <td>{{x.sellingcost}}</td>
+                                            <td><img src="assets/icons/eye.svg" alt="" (click)="simdetail(x)" /><br>
+                                                <button class="reorder-btn" (click)="cancel_subscription(x)" *ngIf="x.DurationType==3 &&
+                                                    x.subscripton_status!='canceled'">Canceled
+                                                    Subscriptions</button>
+                                                <button class="reorder-btn" *ngIf="x.subscripton_status=='canceled'">Canceled</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="mobile">
+                                    <div class="list-group" *ngFor="let x of response">
+                                        <div>
+                                            <button class="badge cancel" (click)="cancel_subscription(x)" *ngIf="x.DurationType==3 &&
+                                            x.subscripton_status!='canceled'">Canceled Subscriptions</button>
+                                            <button class="badge cancel" *ngIf="x.subscripton_status=='canceled'">Canceled</button>
+                                            <p class="name" (click)="simdetail(x)">{{x.planename}}</p>
+                                            <p>{{x.dataallowance}} {{x.dataallowancetype}}</p>
+                                            <p>{{x.vaildity}} {{x.vailditytype}}</p>
+                                            <p>{{x.PurchaseDate}}</p>
+                                        </div>
+                                        <div class="right">
+                                            <div>
+                                                <p class="price">${{x.sellingcost}}</p>
+                                                <div style="margin-left: 35px;" (click)="simdetail(x)"><img src="assets/icons/eye.svg" alt="" class="img-responsive" width="18px"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<section class="mobile">
+    <div class="container text-center">
+        <div class="row" *ngIf="!isLogin">
+            <div class="col">
+                <div class="widget">
+                    <img src="assets/icons/onboard.png" class="img-responsive
+                        featured" style="filter: grayscale(1);" alt="">
+                    <h2>Would you like to see your current eSIMs?</h2>
+                    <p>When you log in / sign up, you’ll see your current eSIMs here.
+                    </p>
+                    <button class="btn btn-primary" (click)="goToLoginPage()">LOG IN / SIGN UP </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="widget">
+                    <img src="assets/images/screen1.png" class="img-responsive
+                        featured" alt="">
+                        <h2>Ready to try eSIMExpress and change the way you stay connected?
+                        </h2>
+                        <p>Go to our telegram webapp to buy needed Sim</p>
+                        <div class="download-app">
+                        <a href="https://t.me/eSIMExpressBot" target="_blank" rel="noopener" title="Download ESimExpress app for iPhone">
+                            <img src="assets/images/telegram.png" class="img-responsive max-w-[120px] mx-auto my-2" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

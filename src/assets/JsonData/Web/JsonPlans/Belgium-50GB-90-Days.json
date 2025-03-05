@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 126,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>4G Data-only E-SIM.</li><li>Network: Operates seamlessly on Telenet Belgium network.</li><li>Internet connectivity required for eSIM activation.</li><li>Activation: Begins upon connecting to network in supported countries</li><li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li><li>Customer Support: 24/7 business and customer support service</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Supports only in mentioned destination</li></ul><p><strong>Supported destination:</strong></p><ul><li>Belgium</li></ul><p><strong>APN:</strong></p><ul><li>plus</li></ul>",
+    "vaildity": "3",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Belgium 50GB 90 Days",
+    "meta_title": "0",
+    "operatorname": "null",
+    "dataallowance": "50",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 2,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Belgium 50GB 90 Days",
+    "sellingcost": 60,
+    "Currency": "1",
+    "vailditytype": "Month",
+    "dataallowanceMonthly": null,
+    "c_r_id": "30",
+    "countryname": "Belgium"
+  }
+]

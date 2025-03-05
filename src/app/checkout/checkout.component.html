@@ -1,0 +1,189 @@
+<div class="page-header2" [class.active]="isToggle">
+  <div class="container">
+    <div class="for-mobile">
+      <div>
+        <a [routerLink]="['/']">
+          <img src="assets/images/esimexpresslogo.png" class="img-fluid logo" alt="ESimExpress App Logo" />
+        </a>
+      </div>
+      <div (click)="toggle()">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2516/2516745.png"
+          width="20px"
+          class="toggle"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="left">
+          <div>
+            <ul>
+              <li [routerLink]="['/free-esim']">
+                <img src="assets/images/esimexpresslogo.png" class="img-fluid"  alt="ESimExpress App Logo"/>
+              </li>
+              <li [routerLink]="['/free-esim']">
+                <a>Top ups</a>
+              </li>
+              <li [routerLink]="['/free-esim']">
+                <a>World eSIMs</a>
+              </li>
+              <li [routerLink]="['/free-esim']">
+                <a>How to install eSIMs</a>
+              </li>
+              <li>
+                <a class="free-esim" [routerLink]="['/free-esim']"
+                  >Free 200 MB data</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <a class="email flex items-center"> 
+            <img src="/assets/images/user-icon1.svg" alt="" class="img-fluid mt-0 w-[20px] mr-[5px]" />
+            {{ user?.email }} </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="py-12">
+  <div class="container">
+    <div class="row main-wrapp justify-center gap-5">
+      <div class="col-md-5">
+        <h4 class="font-semibold text-lg mb-2">Make Payment</h4>
+        <div>
+          <label> Order ID </label>
+        </div>
+        <div>
+          <div class="position-relative">
+            <input
+              type="text"
+              placeholder=""
+              [(ngModel)]="orderid"
+              class="form-control"
+              (input)="validateOrderId($event)"
+            />
+            <p *ngIf="error" class="text-danger">{{ error }}</p>
+            <p *ngIf="success" class="text-success">{{ success }}</p>
+          </div>
+        </div>
+        <div class="step-wrapper-declare mt-3">
+          <div class="step-header-info">
+            <h3>Declaration</h3>
+            <p>By clicking the "Accept All" button, you confirm that:</p>
+          </div>
+          <ul class="consent" [class.active]="areAllCheckboxesChecked()">
+            <li class="position-relative">
+              <div class="input-checked">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="compatibleCheck"
+                  [(ngModel)]="consent[0].checked"
+                />
+                <div class="fill"></div>
+              </div>
+
+              <label class="form-check-label" for="exampleCheck1"
+                >I have an
+                <a href="/info/compatibilityCheck"> eSIM compatible </a>and
+                network-unlocked device.</label
+              >
+            </li>
+            <li class="position-relative">
+              <div class="input-checked">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="TermsCheck"
+                  [(ngModel)]="consent[1].checked"
+                />
+                <div class="fill"></div>
+              </div>
+              <label class="form-check-label" for="exampleCheck2"
+                >I agree to <a href="/info/terms">Terms & Conditions </a>and
+                <a href="/info/policy">Privacy Policy</a>.</label
+              >
+            </li>
+
+            <li class="position-relative">
+              <div class="input-checked">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="feeCheck"
+                  [(ngModel)]="consent[2].checked"
+                />
+                <div class="fill"></div>
+              </div>
+              <label class="form-check-label" for="exampleCheck2"
+                >I agree to pay the convenience fee according to payment
+                gateway.</label
+              >
+            </li>
+          </ul>
+          <div class="accept-all" [class.active]="areAllCheckboxesChecked()">
+            <input type="checkbox" (click)="acceptAll()" />
+            <div class="check">
+              <img
+                src="assets/icons/check-light.svg"
+                alt=""
+                class="img-fluid check-icon"
+              />
+            </div>
+            <label>Accept All</label>
+            <div class="fill"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-xs-12">
+        <div class="basket shadow-none border rounded-sm">
+          <div class="wrapper">
+            <div class="brand">
+              <img src="assets/images/esimexpress-app.png" class="img-fluid" />
+            </div>
+            <div>
+              <div class="name-country">ESimExpress</div>
+              <div>{{ plan?.topupName }}</div>
+            </div>
+          </div>
+          <hr class="sep" />
+          <!-- <div class="list-item">
+                          <div>Discount Code</div>
+                          <div class="apply-coupon">Apply</div>
+                      </div> -->
+          <div class="list-item">
+            <div>Top up Name</div>
+            <div>{{ plan?.topupName }}</div>
+          </div>
+          <div class="list-item">
+            <div>Duration</div>
+            <div>{{ plan?.Validity }} Days</div>
+          </div>
+          <div class="list-item">
+            <div>Data</div>
+            <div>{{ plan?.dataallowance }} {{ plan?.dataallowancetype }}</div>
+          </div>
+          <div class="list-item">
+            <div>Total</div>
+            <div>USD ${{ plan?.price }}</div>
+          </div>
+          <button
+            class="pay-btn"
+            (click)="strip_redirtct()"
+          >
+            Proceed To Pay
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<ngx-ui-loader></ngx-ui-loader>
+
+<ngx-sonner-toaster richColors position="top-center" />

@@ -1,0 +1,427 @@
+<app-marquee-banner></app-marquee-banner>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid flex flex-nowrap items-center justify-between">
+      <button class="navbar-brand" [routerLink]="['/']">
+        <img
+          alt="ESimExpress App Logo"
+          title="ESimExpress App Logo"
+          src="/assets/images/esimexpresslogo.png"
+          class="esimexpress-logo"
+        />
+      </button>
+      <button
+        class="navbar-toggler hidden"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse justify-between items-center"
+        id="navbarNavDropdown"
+      >
+        <!-- <ul class="navbar-nav hidden md:inline-flex">
+          <li class="nav-item dropdown">
+            <button
+              class="nav-link dropdown-toggle text-[13px] font-medium text-black"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Partner Programs
+            </button>
+            <ul
+              class="dropdown-menu w-[175px] text-sm space-y-1"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <button
+                  (click)="goToPage('partners')"
+                  tabindex="0"
+                  (keydown)="handleKeydown($event, 'partners')"
+                  class="text-left font-medium text-sm"
+                >
+                  Enterprise Program
+                </button>
+              </li>
+              <li>
+                <button
+                  (click)="goToPage('partner-with-us/affiliate-partner')"
+                  tabindex="0"
+                  class="text-left font-medium text-sm"
+                  (keydown)="
+                    handleKeydown($event, 'partner-with-us/affiliate-partner')
+                  "
+                >
+                  Affiliate Partner
+                </button>
+              </li>
+              <li>
+                <button
+                  class="text-left font-medium text-sm"
+                  (click)="goToPage('partner-with-us/voucher-program')"
+                  tabindex="0"
+                  (keydown)="
+                    handleKeydown($event, 'partner-with-us/voucher-program')
+                  "
+                >
+                  Voucher Program
+                </button>
+              </li>
+
+              <li>
+                <button
+                  (click)="goToPage('partner-with-us/wholesale-program')"
+                  tabindex="0"
+                  class="text-left font-medium text-sm"
+                  (keydown)="
+                    handleKeydown($event, 'partner-with-us/wholesale-program')
+                  "
+                >
+                  Wholesale Program
+                </button>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link text-[13px] font-medium text-black"
+              (click)="goToPage('blogs')"
+              tabindex="0"
+              (keydown)="handleKeydown($event, 'blogs')"
+            >
+              Blogs
+            </button>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-[13px] font-medium text-black"
+              href="https://support.esim.su/"
+              target="_blank"
+            >
+              Help Center
+          </a>
+          </li>
+        </ul> -->
+        <!-- <div>
+          <ul
+            class="nav navbar-nav navbar-right flex flex-nowrap flex-row items-center justify-end gap-1"
+          >
+            <li class="nav-item hidden md:inline-flex" (click)="goToPage('/')">
+              <button
+                class="nav-link flex items-center text-[13px] font-medium text-black"
+              >
+                <img
+                  src="/assets/images/shopping-bag1.svg"
+                  alt="Shopping Bag"
+                  title="Shopping Bag"
+                  width="20px"
+                  class="mr-[5px]"
+                />
+                Store
+              </button>
+            </li>
+            <span
+              class=""
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasCart"
+              aria-controls="offcanvasCart"
+              #cartButton
+            >
+            </span>
+            <li class="mr-1 mt-[15px] md:mt-0">
+              <button
+                type="button"
+                class="cursor-pointer relative"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasCart"
+                aria-controls="offcanvasCart"
+              >
+                <img
+                  src="assets/images/shopping-cart.svg"
+                  alt="Shopping Cart"
+                  title="Shopping Cart"
+                  width="20px"
+                  class="mr-[5px] mt-[4px]"
+                />
+                <span
+                  class="flex justify-center items-center text-white size-5 rounded-full bg-[#344b4d] absolute -top-[5px] -right-[4px]"
+                  >{{ cartItems.length }}</span
+                >
+              </button>
+            </li>
+            <li *ngIf="status === '1'">
+              <button
+              (click)="goToPage('info/myesim')"
+                style="display: flex; align-items: center"
+              >
+                <span>
+                  <img
+                    src="assets/icons/esim-icon.svg"
+                    width="22px"
+                    alt="eSIM Icon"
+                    title="eSIM Icon"
+                    style="margin-right: 4px"
+                /></span>
+                My eSims
+              </button>
+            </li>
+
+            <ng-container *ngIf="!user">
+              <div class="flex items-center hidden">
+                <div class="hidden md:inline-flex">
+                  <button [routerLink]="['info/sign-up']" class="btn signin">
+                    Sign Up
+                  </button>
+                </div>
+                <div>
+                  <button [routerLink]="['info/sign-in']" class="btn login">
+                    Login
+                  </button>
+                </div>
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="user">
+              <li class="dropdown">
+                <button data-toggle="dropdown" href="#">
+                  <div class="avatar-text">
+                    {{
+                      user?.username?.charAt(0).toUpperCase() ||
+                        user?.Email?.charAt(0).toUpperCase()
+                    }}
+                  </div>
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngIf="user?.accountType === 'guest'">
+                    <button [routerLink]="['info/guestorder']">My Order</button>
+                  </li>
+                  <ng-container *ngIf="user?.accountType !== 'guest'">
+                    <li>
+                      <button [routerLink]="['info/profile']">Profile</button>
+                    </li>
+                    <li>
+                      <button [routerLink]="['info/OrderDetils']">
+                        Order History
+                      </button>
+                    </li>
+                    <li>
+                      <button [routerLink]="['info/Ticket']">Tickets</button>
+                    </li>
+                    <li>
+                      <button [routerLink]="['info/Invitefriends']">
+                        Invite Friends
+                      </button>
+                    </li>
+                  </ng-container>
+                  <li>
+                    <button
+                      (click)="logout()"
+                      (keydown)="handleKeydown($event, 'logout')"
+                      tabindex="0"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ng-container>
+
+            <li>
+            <div class="menu-traslate-header">
+              <img
+                src="assets/images/google-translate.png"
+                class="img-fluid"
+                alt=""
+              />
+              <div id="google_translate_element"></div>
+            </div>
+          </li>
+
+            <li class="hidden md:inline-flex">
+              <button
+                class="btn enterprise"
+                (click)="goToPage('partners')"
+                tabindex="0"
+                (keydown)="handleKeydown($event, 'partners')"
+              >
+                Become an Enterprise
+              </button>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- <div class="sticky-nav">
+  <div
+    class="list"
+    (click)="goToPage('info/myesim')"
+    (keydown)="handleKeydown($event, 'info/myesim')"
+    tabindex="0"
+  >
+    <span
+      ><img
+        src="assets/icons/esim-icon.svg"
+        class="img-fluid"
+        alt="eSIM icon"
+        title="eSIM icon"
+    /></span>
+    <span>My eSims</span>
+  </div>
+
+  <div class="list" (click)="goToPage('/')">
+    <div>
+      <span
+        ><img
+          src="/assets/images/shopping-bag.svg"
+          class="img-fluid"
+          alt="Shopping Bag"
+          title="Shopping Bag"
+      /></span>
+      <span>Store</span>
+    </div>
+  </div>
+
+  <div
+    class="list"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasCart"
+    aria-controls="offcanvasCart"
+  >
+    <div class="relative">
+      <span>
+        <img
+          src="assets/images/shopping-cart.svg"
+          alt="Shopping Cart"
+          title="Shopping Cart"
+          width="20px"
+          class="mr-[5px] mt-[4px]"
+        />
+      </span>
+      <span
+        >Cart
+        <span
+          class="w-4 h-4 rounded-full inline-flex justify-center items-center bg-[#344b4d] text-white text-center"
+          >{{ cartItems.length }}</span
+        ></span
+      >
+    </div>
+  </div>
+
+  <div
+    class="list"
+    (click)="goToPage('info/profile')"
+    (keydown)="handleKeydown($event, 'info/profile')"
+    tabindex="0"
+  >
+    <span
+      ><img
+        src="https://cdn-icons-png.flaticon.com/512/64/64572.png"
+        class="img-fluid"
+        alt="Profile icon"
+        title="Profile icon"
+    /></span>
+    <span>Profile</span>
+  </div>
+</div> -->
+
+<button (click)="scrollToTop()" id="scrollToTopButton" title="Go to top">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="20"
+    height="20"
+    x="0"
+    y="0"
+    viewBox="0 0 24 24"
+    style="enable-background: new 0 0 512 512"
+    xml:space="preserve"
+    fill-rule="evenodd"
+    class=""
+  >
+    <g>
+      <path
+        d="m12 9.414-6.293 6.293a1 1 0 0 1-1.414-1.414l7-7a.999.999 0 0 1 1.414 0l7 7a1 1 0 0 1-1.414 1.414z"
+        fill="#fff"
+        opacity="1"
+        data-original="#fff"
+        class=""
+      ></path>
+    </g>
+  </svg>
+</button>
+<span
+  type="button"
+  data-bs-toggle="modal"
+  class="h-0 w-0 hidden"
+  data-bs-target="#cookiesModal"
+  #cookieButton
+>
+</span>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="cookiesModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered max-w-[400px]">
+    <div class="modal-content rounded-none p-2">
+      <button
+        type="button"
+        class="btn-close absolute top-2 right-2 cursor-pointer z-[9999]"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        (click)="agreeCookies()"
+      ></button>
+      <div class="modal-body">
+        <img
+          src="assets/images/esimexpresslogo.png"
+          alt="ESimExpress App Logo"
+          title="ESimExpress App Logo"
+          class="img-fluid !max-w-[120px] mx-auto"
+        />
+        <h2 class="font-semibold text-center mt-2 mb-1 text-sm">
+          esim.su COOKIES
+        </h2>
+        <p class="leading-loose">
+          We use cookies to ensure that we give you the best experience on our
+          website. If you continue to use this site we will assume that you are
+          happy with it.
+        </p>
+        <div class="text-center">
+          <button
+            type="button"
+            class="btn btn-primary mt-3"
+            data-bs-dismiss="modal"
+            (click)="agreeCookies()"
+          >
+            I AGREE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-cart></app-cart>
+<app-signup-modal></app-signup-modal>
+<ngx-ui-loader></ngx-ui-loader>
+
+<ngx-sonner-toaster richColors position="top-center" />

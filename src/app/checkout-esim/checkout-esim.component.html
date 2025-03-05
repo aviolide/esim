@@ -1,0 +1,244 @@
+<div class="main" id="main" >
+  <div class="container plan-buy" style="max-width: 1200px; margin: auto">
+    <div class="row md:mb-5">
+      <div class="col back-button-col">
+        <div class="flex justify-between items-center">
+          <div
+            class="flex font-semibold items-center cursor-pointer whitespace-nowrap back-button"
+            (click)="goBack()"
+          >
+            <img
+              src="assets/images/next-circle.png"
+              alt="Back"
+              class="next-circle"
+            />
+            Back To {{ countryName !== "" ? countryName + " Plans" : "Home" }}
+          </div>
+          <div
+            class="flex font-semibold items-center cursor-pointer whitespace-nowrap back-button"
+            *ngIf="isSubscriptionPlan"
+            (click)="goToCheckout('traveller')"
+          >
+            Go To Traveller checkout
+            <img
+              src="assets/images/next-circle.png"
+              alt="Back"
+              width="20px"
+              class="ml-[4px]"
+            />
+          </div>
+          <div
+          class="flex font-semibold items-center cursor-pointer leading-normal back-button"
+          *ngIf="!isSubscriptionPlan"
+          (click)="goToCheckout('subscription')"
+        >
+          Go To Subscription checkout
+          <img
+            src="assets/images/next-circle.png"
+            alt="Back"
+            width="20px"
+            class="ml-[4px]"
+          />
+        </div>
+        </div>
+        <h1
+          class="text-center mt-5 md:mt-0 text-lg font-semibold"
+          *ngIf="isSubscriptionPlan"
+        >
+          Subscription Checkout
+        </h1>
+        <h1
+          class="text-center mt-5 md:mt-0 text-lg font-semibold"
+          *ngIf="!isSubscriptionPlan"
+        >
+          Checkout
+        </h1>
+      </div>
+    </div>
+
+    <div class="row flex-wrap-reverse ">
+      <div class="col-md-6">
+        <div
+          class="step-wrapper-declare text-left"
+          [class.active]="areAllCheckboxesChecked()"
+        >
+          <div class="step-header-info">
+            <div class="text-md text-lg font-semibold">Declaration</div>
+            <p>By clicking the "Accept All" button, you confirm that:</p>
+          </div>
+          <ul
+            class="consent relative"
+            [class.active]="areAllCheckboxesChecked()"
+          >
+            <li>
+              <div class="input-checked">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="compatibleCheck"
+                  [(ngModel)]="consent[0].checked"
+                />
+                <div class="fill"></div>
+              </div>
+              <label class="form-check-label" for="exampleCheck1"
+                >I have an
+                <a href="/info/compatibilityCheck" class="text-black"> eSIM compatible </a>and
+                network-unlocked device.
+              </label>
+            </li>
+            <li>
+              <div class="input-checked">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="TermsCheck"
+                  [(ngModel)]="consent[1].checked"
+                />
+                <div class="fill"></div>
+              </div>
+              <label class="form-check-label" for="exampleCheck2"
+                >I agree to <a href="/info/terms" class="text-black">Terms & Conditions </a>and
+                <a href="/info/policy" class="text-black">Privacy Policy</a>.
+              </label>
+            </li>
+            <!-- <li>
+              <div class="input-checked">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="feeCheck"
+                  [(ngModel)]="consent[2].checked"
+                />
+                <div class="fill"></div>
+              </div>
+              <label class="form-check-label" for="exampleCheck2"
+                >I agree to pay the convenience fee according to payment
+                gateway.</label
+              >
+            </li> -->
+          </ul>
+          <div class="accept-all">
+            <input type="checkbox" (click)="acceptAll()" />
+            <div class="check">
+              <img
+                src="assets/icons/check-light.svg"
+                alt=""
+                class="img-fluid check-icon"
+              />
+            </div>
+            <label>Accept All</label>
+            <div class="fill"></div>
+          </div>
+
+          <div *ngIf="!isAcceptTerms" class="error-message mt-1">
+            Please accept all Terms & Conditions.
+          </div>
+        </div>
+
+        <div class="text-md text-lg font-semibold mb-0">Choose your payment method</div>
+        <p style="max-width: 500px">
+          Make your payment securely through Credit/debit card or PayPal and
+          stay connected like never before!
+        </p>
+
+        <div class="payment-action-btns">
+          <div class="payment-btns">
+            <ng-container *ngIf="!isMonthlyPlan">
+              <ng-container *ngIf="Paypal">
+                <button
+                  class="credit-card-btn stripe1"
+                  *ngIf="!isPaymentBtn"
+                  (click)="strip_redirtct()"
+                >
+                  <i class="fa fa-credit-card" aria-hidden="true"></i> Credit /
+                  Debit Card
+                </button>
+              </ng-container>
+
+              <button
+                class="paypal"
+                *ngIf="!isSubscriptionPlan"
+                (click)="landpaymentpage()"
+                style="margin-left: 10px"
+              >
+                <span>
+                  <img src="assets/images/paypal.png" class="img-fluid" alt="" />
+                </span>
+              </button>
+            </ng-container>
+
+            <!---- Stripe Payment for Monthly Plans popup  -->
+            <ng-container *ngIf="isSubscriptionPlan">
+              <ng-container>
+                <button class="credit-card-btn" (click)="makePayment()">
+                  <i class="fa fa-credit-card" aria-hidden="true"></i> Credit /
+                  Debit Card
+                </button>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="payment-trust">
+            <div class="item">
+              <span>
+                <img src="assets/images/lock.png" width="10px" alt="" />
+              </span>
+              <span>Secure Payment</span>
+            </div>
+            <div class="item">
+              <span>
+                <img src="assets/images/customer.png" alt="" />
+              </span>
+              <span>24/7 Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <app-cart-basket></app-cart-basket>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+
+<span data-toggle="modal" data-target="#qrCodeAlertModal" #alertModal></span>
+<!-- Modal -->
+<div
+  class="modal fade alertModal"
+  id="qrCodeAlertModal"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <img src="assets/images/modal-bg.png" class="img-fluid" />
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>
+          Please note that this ESimExpress product is special and requires
+          registration with a unique number, which may take up to 12 hours. As a
+          result, the QR Code/Activation Notification will not be sent
+          immediately after purchase.
+        </p>
+        <p>
+          <em
+            >You will receive the <strong>QR Code within 12 hours</strong> of
+            the purchase to your registered email ID
+          </em>
+        </p>
+        <p>
+          If your travel date is scheduled for the future, the
+          <em>QR Code/Activation Notification</em> will only be sent on the
+          activation or travel date you select during the purchase process. To
+          proceed with purchasing your eSIM, please click below
+        </p>
+        <div class="text-center">
+          <button class="btn btn-primary" data-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

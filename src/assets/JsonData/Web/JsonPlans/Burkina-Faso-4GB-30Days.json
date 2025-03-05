@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 2123,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>4G Data-only E-SIM.</li><li>Operates on the AIRTEL BURKINA FASO S.A. in Burkina Faso</li><li>Internet connectivity required for eSIM activation.</li><li>Activation: Begins upon connecting to network in supported countries</li><li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li><li>Customer Support: 24/7 business and customer support service</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Supports only in mentioned destination</li></ul><p><strong>Supported destination:</strong></p><ul><li>Burkina Faso</li></ul><p>&nbsp;</p>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Burkina Faso 4GB 30Days",
+    "meta_title": "0",
+    "operatorname": "Airtel",
+    "dataallowance": "4",
+    "dataallowancetype": "GB",
+    "voice_minute": "",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Burkina Faso 4GB 30Days",
+    "sellingcost": 18,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "250",
+    "countryname": "Burkina Faso"
+  }
+]

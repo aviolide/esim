@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1442,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>45&nbsp;GB High-speed data</li><li>Connects to TIM network with&nbsp;5G and 4G LTE speed</li><li>Compatible with Andriod and iOS devices (check FAQ for compatible handsets)</li><li>24*7 Business support and customer support service.</li><li>APN:&nbsp;surf.br</li><li>Validity: Starts immediately after purchasing QR code</li></ul><p><strong>Usage Restrictions:</strong></p><ul><li>E-SIM works only within Brazil</li></ul><p><strong>Supported Destination:</strong></p><ul><li>Brazil</li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Brazil 55GB Data 30Days",
+    "meta_title": "0",
+    "operatorname": "Tim",
+    "dataallowance": "55",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Brazil 55GB Data 30Days",
+    "sellingcost": 49,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "192",
+    "countryname": "Brazil"
+  }
+]

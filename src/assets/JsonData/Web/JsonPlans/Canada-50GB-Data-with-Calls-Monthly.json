@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 970,
+    "addinformation": "<p><strong>Package Details:</strong></p>\n\n<ul>\n\t<li>50GB Highspeed 5G Data with instant data connection and Unlimited Voice</li>\n\t<li>Network: Operates on Telus in Canada</li>\n\t<li>UNLIMITED international text and picture messaging</li>\n\t<li>Voicemail - Up to 35 minutes of messages</li>\n\t<li>Up to 1,000 minutes of International Calling:&nbsp;<strong> Argentina, Australia, Bangladesh, Brazil, China, Colombia, Costa Rica, France, Germany, Hong Kong, India, Ireland, Italy, Japan, Korea, Malaysia, Mexico, Netherlands, Nigeria, Pakistan, Peru, Philippines, Poland, Singapore, Spain, Sri Lanka, Taiwan, United Kingdom, United States, and Vietnam.</strong></li>\n\t<li>Validity: Starts immediately after receiving QR code</li>\n\t<li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li>\n</ul>\n\n<p><strong>Usage Restrictions:</strong></p>\n\n<ul>\n\t<li>E-SIM works only within Canada</li>\n</ul>\n\n<p><strong>Travel Recommendations:</strong></p>\n\n<ul>\n\t<li>Choose travel dates within 5 days from the current date</li>\n</ul>\n\n<p><strong>Supported Destination:</strong></p>\n\n<ul>\n\t<li>Canada</li>\n</ul>\n",
+    "vaildity": "1",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Canada 50GB Data with Calls Monthly",
+    "meta_title": "0",
+    "operatorname": "Telus Mobility",
+    "dataallowance": "50",
+    "dataallowancetype": "GB",
+    "voice_minute": "",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 3,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Canada 50GB Data with Calls Monthly",
+    "sellingcost": 40,
+    "Currency": "1",
+    "vailditytype": "Month",
+    "dataallowanceMonthly": "/Month",
+    "c_r_id": "13",
+    "countryname": "Canada"
+  }
+]

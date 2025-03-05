@@ -1,0 +1,286 @@
+<div class="page-title">
+  <h1>Tickets</h1>
+</div>
+
+<div class="acount-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <app-user-navigation></app-user-navigation>
+      </div>
+      <div class="col-md-8 no-padding-mobile">
+        <div class="widget">
+          <div class="text-right">
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal" data-bs-target="#addTicketModal"
+            >
+              Add New Ticket
+            </button>
+          </div>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button
+                class="nav-link active"
+                id="nav-active-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#home"
+                type="button"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+              >
+                Active
+              </button>
+              <button
+                class="nav-link"
+                id="nav-closed-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#menu1"
+                type="button"
+                role="tab"
+                aria-controls="menu1"
+                aria-selected="false"
+              >
+                Closed
+              </button>
+              <button
+                class="nav-link"
+                id="nav-process-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#menu2"
+                type="button"
+                role="tab"
+                aria-controls="menu2"
+                aria-selected="false"
+              >
+                In Process
+              </button>
+            </div>
+          </nav>
+
+          <div class="tab-content">
+            <div
+              id="home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              class="tab-pane fade show active"
+              
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+            >
+              <div class="table-responsive table-custom">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>TICKET NO.</th>
+                      <th>SUBJECT</th>
+                      <th>SUB CATEGORY</th>
+                      <th>ESIM NO. / ICCID</th>
+                      <th>REMARK</th>
+                      <th>DATE</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let x of response">
+                      <td>{{ x.TicketNo }}</td>
+                      <td>{{ x.ComplainType }}</td>
+                      <td>{{ x.TicketSubComplaintName }}</td>
+                      <td></td>
+                      <td>{{ x.eSimno }}</td>
+                      <td>{{ x.CreatedDate }}</td>
+                      <td>
+                        <img src="assets/icons/eye.svg" alt="" 
+                          (click)="ticketprocess(x, 'o')"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="menu1"
+              role="tabpanel"
+              aria-labelledby="nav-menu1-tab"
+            >
+              <div class="table-responsive table-custom">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>TICKET NO.</th>
+                      <th>SUBJECT</th>
+                      <th>SUB CATEGORY</th>
+                      <th>ESIM NO. / ICCID</th>
+                      <th>REMARK</th>
+                      <th>DATE</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let x of response">
+                      <td>{{ x.TicketNo }}</td>
+                      <td>{{ x.ComplainType }}</td>
+                      <td>{{ x.TicketSubComplaintName }}</td>
+                      <td></td>
+                      <td>{{ x.eSimno }}</td>
+                      <td>{{ x.CreatedDate }}</td>
+                      <td>
+                        <img src="assets/icons/eye.svg" alt="" 
+                          (click)="ticketprocess(x, 'c')"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="menu2"
+              role="tabpanel"
+              aria-labelledby="nav-menu2-tab"
+            >
+              <div class="table-responsive table-custom">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>TICKET NO.</th>
+                      <th>SUBJECT</th>
+                      <th>SUB CATEGORY</th>
+                      <th>ESIM NO. / ICCID</th>
+                      <th>REMARK</th>
+                      <th>DATE</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let x of response">
+                      <td>{{ x.TicketNo }}</td>
+                      <td>{{ x.ComplainType }}</td>
+                      <td>{{ x.TicketSubComplaintName }}</td>
+                      <td></td>
+                      <td>{{ x.eSimno }}</td>
+                      <td>{{ x.CreatedDate }}</td>
+                      <td>
+                        <img src="assets/icons/eye.svg" alt="" (click)="ticketprocess(x, 'p')"/>
+                     
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+  <div  class="modal fade" id="addTicketModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add Ticket</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeBtn>
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-info">
+            <div class="row">
+              <div class="col-md-12">
+                <label for="">Category</label>
+                <span>
+                  <select
+                    formControlName="complaintmaster"
+                    (change)="subcomplaint(complaintmaster.ID)"
+                  >
+                    <option value="">Select</option>
+                    <option
+                      *ngFor="let comp of complaintmaster.Table"
+                      [value]="comp.ID"
+                    >
+                      {{ comp.TicketComplainName }}
+                    </option>
+                  </select>
+                </span>
+                <div
+                  *ngIf="submitted && f['complaintmaster'].errors"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="f['complaintmaster'].errors['required']">
+                    Category is required
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="">Sub Category</label>
+                <span>
+                  <select formControlName="subcomplaintmaster">
+                    <option value="">Select</option>
+                    <option
+                      *ngFor="let subcom of subcomplaintmaster.Table"
+                      [value]="subcom.ID"
+                    >
+                      {{ subcom.TicketSubComplaintName }}
+                    </option>
+                  </select>
+                </span>
+                <div
+                  *ngIf="submitted && f['subcomplaintmaster'].errors"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="f['subcomplaintmaster'].errors['required']">
+                    Sub Category is required
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="">Esim Number / ICCID</label>
+                <span
+                  ><input
+                    type="text"
+                    formControlName="EsimNumber"
+                    placeholder="Please provide eSIM number"
+                /></span>
+              </div>
+              <div class="col-md-12">
+                <label for="">Remarks</label>
+                <span>
+                  <textarea
+                    formControlName="Remarks"
+                    rows="4"
+                    placeholder="Please write up your query here..."
+                    [ngClass]="{
+                      'is-invalid': submitted && f['Remarks'].errors
+                    }"
+                  ></textarea>
+                </span>
+                <div
+                  *ngIf="submitted && f['Remarks'].errors"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="f['Remarks'].errors['required']">
+                    Sub Category is required
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button class="btn btn-ticket" type="submit">
+                  Create Ticket
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

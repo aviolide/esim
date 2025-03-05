@@ -1,0 +1,89 @@
+<section
+  class="search-header page-banner bg overlay"
+  style="background-image: url(assets/images/bg-gradient.png)"
+>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <div class="wrap search">
+          <h1>Blogs & Articles</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section" style="padding-top: 50px; padding-bottom: 50px">
+  <div class="container">
+    <ul class="category-list">
+      <li
+        class="cursor-pointer"
+        [class.active-tab]="isActive('1')"
+        (click)="setActive('1', 'All')"
+      >
+        All
+      </li>
+      <li
+        class="cursor-pointer"
+        [class.active-tab]="isActive('2')"
+        (click)="setActive('2', 'Country wise eSim Plans')"
+      >
+        Country wise eSim Plans
+      </li>
+      <li
+        class="cursor-pointer"
+        [class.active-tab]="isActive('3')"
+        (click)="setActive('3', 'Upcoming events')"
+      >
+        Upcoming events
+      </li>
+      <li
+        class="cursor-pointer"
+        [class.active-tab]="isActive('4')"
+        (click)="setActive('4', 'Technology')"
+      >
+        Technology
+      </li>
+      <li
+        class="cursor-pointer"
+        [class.active-tab]="isActive('5')"
+        (click)="setActive('5', 'Know How')"
+      >
+        Know How
+      </li>
+      <li
+        class="cursor-pointer"
+        [class.active-tab]="isActive('6')"
+        (click)="setActive('6', 'Travelers')"
+      >
+        Travelers
+      </li>
+    </ul>
+    <div class="blog-count" *ngIf="countblog > 0">{{ countblog  }} Blogs Found</div>
+    <ul class="blog-list">
+      <li *ngFor="let x of response">
+        <a [routerLink]="['/blogs', x?.Slug]">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="blog-img">
+                <img
+                  src="{{
+                    'https://bloglogin.esim.su/data/' + x?.ImgPath
+                  }}"
+                  [alt]="x?.Title"
+                />
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="blog-wrap">
+                <h2>{{ x?.Title }}</h2>
+                <p>{{ x?.Description }}</p>
+                <div class="blog-date">{{ x?.PublishDate | date: 'dd/MM/yyyy' }}</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

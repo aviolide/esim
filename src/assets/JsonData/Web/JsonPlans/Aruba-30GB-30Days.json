@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 873,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>30GB high-speed data;</li><li>Validity starts immediately after purchase</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Scan and activate QR code only in the Aruba</li><li>Outbound texts are not supported.</li><li>International calls are not permitted within this package.</li><li>Service may be blocked permanently if used outside designated country</li></ul><p><strong>Supported Destination:</strong></p><ul><li>Aruba</li></ul><p><strong>APN&nbsp;</strong></p><ul><li>internet</li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Aruba 30GB 30Days",
+    "meta_title": "0",
+    "operatorname": "VDF",
+    "dataallowance": "30",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Aruba 30GB 30Days",
+    "sellingcost": 30,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "41",
+    "countryname": "Aruba"
+  }
+]

@@ -1,0 +1,7 @@
+<svg width="300" height="80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Telegram blue color -->
+  <rect width="100%" height="100%" fill="#0088cc" rx="8"/> <!-- rx="8" for rounded corners -->
+  
+  <!-- Centered text -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Go to our bot</text>
+</svg>

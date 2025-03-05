@@ -1,0 +1,84 @@
+<div class="page-title">
+  <h1>Tickets</h1>
+</div>
+
+<div class="acount-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <app-user-navigation></app-user-navigation>
+      </div>
+      <div class="col-md-8">
+        <div class="widget">
+          <div class="header-ticket">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="esim-info">
+                  <li>
+                    <label for="">Complaint: </label
+                    ><span>{{ compainttype }}</span>
+                  </li>
+                  <li>
+                    <label for="">Sub Complaint: </label
+                    ><span>eSim is not working</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="esim-info">
+                  <li>
+                    <label for="">Status:</label><span>In Progress </span>
+                  </li>
+                  <li>
+                    <label for="">Ticket: </label><span>eSIM202109233</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="header-ticket-list" *ngFor="let x of response.Table">
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="esim-info-history">
+                    <li>
+                      <label for="">From:</label><span>{{ x.userby }} </span>
+                    </li>
+                    <li>{{ x.CreatedDate | date : "dd-MMM-yyyy" }}</li>
+                  </ul>
+                  <div class="esim-txt">
+                    <p>{{ x.Message }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="header-ticket-list">
+              <div class="row">
+                <div class="replybox">
+                  <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="5"
+                    [(ngModel)]="Remarks"
+                    placeholder="Write here to reply"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                class="btn btn-primary"
+                type="submit"
+                (click)="SaveReply()"
+              >
+                Reply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

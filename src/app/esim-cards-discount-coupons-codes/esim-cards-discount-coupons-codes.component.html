@@ -1,0 +1,130 @@
+<div class="coupon-page">
+  <section class="coupon">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>ESimExpress Active eSIM coupon codes</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="coupon-list">
+            <div class="coupon-card" *ngFor="let c of couponsList">
+              <div class="left">
+                <div class="off">
+                  {{ c.percent }} <br />
+                  OFF
+                </div>
+                <div>
+                  <h4>{{ c.percent }} {{ c.country }}</h4>
+                  <p>{{ c.country }} esIM Travel Coupon Code</p>
+                </div>
+              </div>
+              <div>
+                <div class="scratch">
+                  <div
+                    class="reveal"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal"
+                    (click)="selectCoupon(c)"
+                  >
+                    Reveal Code
+                    <span>
+                      <img src="/assets/images/code-copy.svg" alt=""
+                    /></span>
+                  </div>
+                  <div class="code">{{ c.code }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="border p-3 pb-0 rounded">
+            <img
+              src="assets/images/esimexpresslogo.png"
+              style="max-width: 120px"
+              alt="ESimExpress App Logo"
+            />
+            <h3 class="faq-title">FAQs</h3>
+
+            <div class="accordion p-0 border-0" id="accordionExample">
+              <div
+                class="accordion-item  mb-[10px] px-2"
+                *ngFor="let item of faqs; index as i"
+              >
+                <h2 class="accordion-header border-0">
+                  <button
+                    class="accordion-button border-0 bg-white text-[13px] text-black py-1 px-3 font-medium relative leading-normal shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse' + i"
+                    aria-expanded="true"
+                    [attr.aria-controls]="'collapse' + i"
+                  >
+                    <div class="count absolute top-[3px] font-semibold -left-[20px]">
+                      {{ i + 1 }}
+                    </div>
+                    {{ item.qns }}
+                  </button>
+                </h2>
+                <div
+                  [id]="'collapse' + i"
+                  class="accordion-collapse collapse"
+                  [ngClass]="{ show: i === 0 }"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body p-0">
+                    <div class="leading-loose" [innerHTML]="item.ans"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade coupon-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div *ngIf="selectedCoupon">
+            <div class="coupon-wrap">
+              <div class="left">
+                {{ selectedCoupon?.percent }} <br />OFF
+                <div class="text">Coupon</div>
+              </div>
+              <div>
+                <h3>{{ selectedCoupon.country }} esIM Travel Coupon Code</h3>
+                <div class="codes">
+                  {{ selectedCoupon.code }}
+                  <div
+                    class="copy"
+                    (click)="copyToClipboard(selectedCoupon.code)"
+                  >
+                    COPY
+                  </div>
+                </div>
+                <div>
+                  <div class="text b">
+                    Valid for {{ selectedCoupon.country }} eSIM Travel Plan
+                  </div>
+                </div>
+                <div>
+                  <a class="btn" (click)="revealCode(selectedCoupon)"
+                    >Shop Now <i class="fa fa-chevron-right"></i>
+                    <i class="fa fa-chevron-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

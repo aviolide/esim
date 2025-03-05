@@ -1,0 +1,231 @@
+<div class="border p-3 rounded-lg" *ngIf="cartItems.length > 0">
+  <div *ngFor="let cart of cartItems" class="space-y-2 mt-3">
+    <div class="flex justify-between">
+      <div>
+        <div class="flex text-left">
+          <div class="mr-3">
+            <div
+              class="size-12 mr-[10px] relative rounded-md bg-[#e2e2e2ad] border border-[#e2e2e2ad] flex justify-center items-center"
+            >
+              <img
+                [src]="'/assets/flags/' + cart?.countryname + '.svg'"
+                [alt]="cart?.countryname + ' flag'"
+                class="size-8 rounded-full"
+              />
+              <span
+                class="text-slate-500 size-6 flex justify-center items-center absolute -right-[10px] -top-[12px] bg-[#344b4d] text-white rounded-full"
+                >{{ cart.qty }}</span
+              >
+            </div>
+          </div>
+          <div>
+            <div class="text-slate-900 font-semibold leading-normal mr-3">
+              {{ cart?.plan_name }}
+            </div>
+            <div class="max-w-[400px]">{{ cart?.countryname }}</div>
+            <div class="border mt-2 max-w-[110px]">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 hover:underline h-9 py-2 px-2"
+                (click)="decrementQuantity(cart)"
+              >
+                -
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 hover:underline h-9 px-4 py-2"
+              >
+                {{ cart.qty }}
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 hover:underline h-9 py-2 px-2"
+                (click)="incrementQuantity(cart)"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        <p
+          class="text-[13px] leading-light hidden"
+          *ngIf="cart?.EIDnumber !== null"
+        >
+          IMEI : <span class="font-medium">{{ cart?.EIDnumber }}</span>
+        </p>
+        <p
+          class="text-[13px] leading-tight hidden"
+          *ngIf="cart?.IMEInumber !== null"
+        >
+          EID Number: <span class="font-medium">{{ cart?.IMEInumber }}</span>
+        </p>
+      </div>
+      <div>
+        <div class="text-black text-[15px] font-medium">
+          <div class="whitespace-nowrap">
+            $ {{ (cart.qty * cart.saleprice).toFixed(2) }}
+          </div>
+        </div>
+        <div class="text-red-500 cursor-pointer" (click)="removeFromCart(cart)">
+          REMOVE
+        </div>
+      </div>
+    </div>
+    <div class="border-b opacity-50 border-slate-200 w-full mt-3"></div>
+  </div>
+
+  <div
+    class="flex justify-between items-center border-t border-t-[#f1f1f1] mt-3 text-sm subtotal"
+  >
+    <div>{{ isApplyDiscount ? "SubTotal" : "Total" }}</div>
+    <div class="font-medium">$ {{ getTotalAmount().toFixed(2) }}</div>
+  </div>
+
+  <div
+    class="flex justify-between items-center text-sm discounts"
+    *ngIf="isApplyDiscount"
+  >
+    <div>Discounts - {{ discounts?.DiscountPercent }}%</div>
+    <div>
+      - $
+      {{ ((getTotalAmount() * discounts?.DiscountPercent) / 100).toFixed(2) }}
+    </div>
+  </div>
+
+  <div
+    class="flex justify-between items-center text-sm border-t border-[#f1f1f1] total"
+    *ngIf="isApplyDiscount"
+  >
+    <div>Total</div>
+    <div class="font-medium">$ {{ getTotalFinalAmount() }}</div>
+  </div>
+</div>
+
+<div class="" [class.hidden]="isFamilyDiscountApplied || isMaxDiscountApplied">
+  <div class="apply-coupon" *ngIf="!isMonthlyPlan">
+    <input type="text" placeholder="PROMO CODE" [(ngModel)]="txtpromocode" />
+    <button
+      class="btn btn-primary"
+      (click)="getcupuon()"
+      *ngIf="!isApplyDiscount"
+    >
+      APPLY
+    </button>
+    <button
+      class="btn btn-primary"
+      (click)="Removecupuon()"
+      *ngIf="isApplyDiscount"
+    >
+      Remove
+    </button>
+    <div class="info-icon hidden">
+      <div class="tipsinfo">
+        <h3>Promocode T&C</h3>
+        <ul style="list-style-type: disc; padding: 0 15px">
+          <li>The promo codes are valid till limited period only.</li>
+          <li>Can be used only once per account unless otherwise specified.</li>
+          <li>Purchases made using the Promo code cannot be refunded.</li>
+          <li>May not be combined with other discount offers.</li>
+          <li>eSimExpress reserves the right to modify or cancel anytime.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="alert alert-dismissible p-0 fade show"
+  role="alert"
+  *ngIf="!isFamilyDiscount && !isMaxDiscountApplied"
+>
+  <div
+    class="family-discount bg-green-100 border-l-4 border-green-500 text-green-800 text-sm leading-normal mx-auto flex justify-center items-center w-full max-w-[500px] py-2 px-4 mt-3 rounded-md font-medium"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="28"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#16a34a"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-circle-percent w-[40px]"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="m15 9-6 6" />
+      <path d="M9 9h.01" />
+      <path d="M15 15h.01" />
+    </svg>
+
+    <div class="ml-[10px] text-[13px]">
+      Get a 3% discount at checkout when you buy at least 2 eSIMs and your cart total is $35 or more.
+    </div>
+
+    <button type="button" data-bs-dismiss="alert" aria-label="Close">
+      <img
+        src="/assets/images/x-mark.svg"
+        alt="close icon"
+        title="close icon"
+        class="cursor-pointer ml-1"
+      />
+    </button>
+  </div>
+</div>
+
+<div
+  class="flex items-center justify-center mt-3"
+  *ngIf="isFamilyDiscountApplied"
+>
+  <div
+    class="bg-green-100 border-l-4 border-green-500 text-green-800 p-3 rounded-lg w-full max-w-[500px]"
+  >
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 mr-1 text-green-600"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9 12l2 2 4-4m5 2a9 9 0 11-9-9 9 9 0 019 9z"
+        ></path>
+      </svg>
+      <p class="font-semibold text-sm">
+        Woo hoo! You have got 5% discount on your purchase.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="flex items-center justify-center mt-3" *ngIf="isMaxDiscountApplied">
+  <div
+    class="bg-green-100 border-l-4 border-green-500 text-green-800 p-3 rounded-lg w-full max-w-[500px]"
+  >
+    <div class="flex items-center">
+      <svg
+        class="w-6 h-6 mr-1 text-green-600"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9 12l2 2 4-4m5 2a9 9 0 11-9-9 9 9 0 019 9z"
+        ></path>
+      </svg>
+      <p class="font-semibold text-sm">
+        Woo hoo! You have got 3% discount on your purchase.
+      </p>
+    </div>
+  </div>
+</div>
+

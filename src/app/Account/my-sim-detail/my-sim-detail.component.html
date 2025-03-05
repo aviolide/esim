@@ -1,0 +1,122 @@
+<div class="page-title">
+    <h1>My eSims</h1>
+  </div>
+  
+  <div class="acount-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <app-user-navigation></app-user-navigation>
+        </div>
+        <div class="col-md-8">
+          <div class="widget" style="padding: 40px 30px">
+            <a
+              [routerLink]="['/info/myesim']"
+              style="
+                display: flex;
+                align-items: center;
+                color: #000;
+                cursor: pointer;
+                margin-bottom: 20px;
+              "
+            >
+              <span
+                ><img
+                  alt=""
+                  src="https://cdn-icons-png.flaticon.com/512/507/507257.png"
+                  class="img-fluid"
+                  style="width: 17px; margin-right: 4px"
+              /></span>
+              Back
+            </a>
+            <div class="row align-center">
+              <div class="col-md-6" *ngIf="response.qrcodeimag !== null">
+                <div class="qr-wrap">
+                  <h1>Install eSim through <br />QR Code</h1>
+                  <br />
+                  <h3>
+                    eSIMs can only be installed once. Please do not delete/remove
+                    after the installation
+                  </h3>
+                  
+                  <div class="esim-qr">
+                    <img
+                      [src]="
+                        'http://api-doc.esim.su/QRCodeIMG/' +
+                        response.qrcodeimag
+                      "
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="list-group-item">
+                  <div class="list-item">
+                    <label>Plan Name :</label>
+                    <div>{{ response.planename }}</div>
+                  </div>
+                  <div class="list-item">
+                    <label>Amount :</label>
+                    <div>{{ response.sellingcost }}</div>
+                  </div>
+                  <div class="list-item">
+                    <label>Data :</label>
+                    <div>
+                      {{ response.dataallowance }}
+                      {{ response.dataallowancetype }}
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <label>Validity :</label>
+                    <div>{{ response.vaildity }} {{ response.vailditytype }}</div>
+                  </div>
+                  <div class="list-item" style="display: none">
+                    <label>Activation Date :</label>
+                    <div>{{ response.Activation_Date }}</div>
+                  </div>
+                  <div class="list-item" style="display: none">
+                    <label>Activation End Date :</label>
+                    <div>{{ response.Activation_EndDate }}</div>
+                  </div>
+                  <div class="list-item">
+                    <label>Country :</label>
+                    <div>
+                      <img
+                        [src]="'assets/country-flags/' + response.flagimage"
+                        [alt]="response.countryname + ' flag'"
+                        style="width: 32px; margin-right: 10px"
+                      />
+                      <span>{{ response.countryname }}</span>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <label>SIM ID :</label>
+                    <div>
+                      <span>{{
+                        response.ICCID == null ? "NA" : response.ICCID
+                      }}</span>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <label>APN PIN :</label>
+                    <div>
+                      <span>{{
+                        response.Apn_pin == null ? "NA" : response.Apn_pin
+                      }}</span>
+                    </div>
+                  </div>
+  
+                  <!-- <div class="list-item">
+                                      <label>Call Detail (CDR) :</label>
+                                      <div>Download</div>
+                                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

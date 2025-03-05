@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 725,
+    "addinformation": "<p><strong>Package Details:</strong><br>&nbsp;</p><ul><li>27GB Highspeed 5G Data with instant data connection and Unlimited Voice</li><li>Network: Operates on Telus in Canada</li><li>UNLIMITED international text and picture messaging</li><li>Voicemail - Up to 35 minutes of messages</li><li>Up to 1,000 minutes of International Calling: <strong>Argentina, Australia, Bangladesh, Brazil, China, Colombia, Costa Rica, France, Germany, Hong Kong, India, Ireland, Italy, Japan, Korea, Malaysia, Mexico, Netherlands, Nigeria, Pakistan, Peru, Philippines, Poland, Singapore, Spain, Sri Lanka, Taiwan, United Kingdom, United States, and Vietnam.</strong></li><li>Validity: Starts immediately after receiving QR code</li><li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li></ul><p><strong>Usage Restrictions:</strong><br>&nbsp;</p><ul><li>E-SIM works only within Canada</li></ul><p><strong>Travel Recommendations:</strong><br>&nbsp;</p><ul><li>Choose travel dates within 5 days from the current date</li></ul><p><strong>Supported Destination:</strong><br>&nbsp;</p><ul><li>Canada</li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Canada 27GB Data With Calls 30Days",
+    "meta_title": "0",
+    "operatorname": "Telus",
+    "dataallowance": "27",
+    "dataallowancetype": "GB",
+    "voice_minute": "Unlimited voice",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Canada 27GB Data With Calls 30Days",
+    "sellingcost": 34,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "13",
+    "countryname": "Canada"
+  }
+]

@@ -1,0 +1,28 @@
+<section class="sitemap">
+    <div class="container">
+        <h1>Sitemap</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <ul>
+
+                    <li *ngFor="let page of pages"><a href="{{page.pageName}}" target="_blank">{{page.pageName}}</a></li>
+                   
+                </ul>
+
+               
+            </div>
+            <div class="col-md-4">
+                <h3 class="mt-0">Country eSIM</h3>
+                <ul>
+                    <li *ngFor="let c of countries"><a href="/esim/{{c.CountryName}}" target="_blank">{{c.CountryName}}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 class="mt-0">Blogs</h3>
+                <ul>
+                    <li *ngFor="let b of blogs"><a href="/blogs/{{b.Slug}}"  target="_blank" >{{b.Slug}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

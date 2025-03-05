@@ -1,0 +1,203 @@
+<section class="esim-category" #esimTabs>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col">
+        <ul>
+          <li
+            [ngClass]="{ active: selectedtab === 'one' ? true : false }"
+            [ngClass]="{ active: selectedtab === 'one' ? true : false }"
+          >
+            <button (click)="tabclick('one')">
+              <span class="icon"
+                ><img
+                  [src]="
+                    selectedtab === 'one'
+                      ? 'assets/images/local-map-active.svg'
+                      : 'assets/images/local-map.svg'
+                  "
+                  class="img-fluid"
+                  width="18px"
+                  alt="Location icon"
+                  title="Location icon"
+              /></span>
+              <span>Local eSIMs</span>
+            </button>
+          </li>
+          <li
+            [ngClass]="{
+              active: selectedtab === 'two' ? true : false
+            }"
+          >
+            <button (click)="tabclick('two')">
+              <span class="icon"
+                ><img
+                  [src]="
+                    selectedtab === 'two'
+                      ? 'assets/images/regional-map-active.svg'
+                      : 'assets/images/regional-map.svg'
+                  "
+                  class="img-fluid"
+                  width="18px"
+                  alt="Regional Map"
+                  title="Regional Map"
+              /></span>
+              <span>Regional eSIMs</span>
+            </button>
+          </li>
+          <li
+            [ngClass]="{
+              active: selectedtab === 'three' ? true : false
+            }"
+          >
+            <button (click)="tabclick('three')">
+              <span class="icon">
+                <img
+                  [src]="
+                    selectedtab === 'three'
+                      ? 'assets/images/calendar-heart-active.svg'
+                      : 'assets/images/calendar-heart.svg'
+                  "
+                  class="img-fluid"
+                  width="18px"
+                  alt="Calendar icon"
+                  title="Calendar icon"
+              /></span>
+              <span>Monthly Plans</span>
+            </button>
+          </li>
+          <li>
+            <button [routerLink]="['/esim', 'Global']">
+              <span class="icon">
+                <img
+                  [src]="
+                    selectedtab === 'three'
+                      ? 'assets/images/globe1-active.svg'
+                      : 'assets/images/globe1.svg'
+                  "
+                  class="img-fluid"
+                  width="18px"
+                  alt="Map icon"
+                  title="Map icon"
+              /></span>
+              <span>Global eSIM</span>
+            </button>
+          </li>
+          <li>
+            <button [routerLink]="['/free-esim']">
+              <span class="icon">
+                <img
+                  [src]="
+                    selectedtab === 'three'
+                      ? 'assets/images/globe1-active.svg'
+                      : 'assets/images/globe1.svg'
+                  "
+                  class="img-fluid"
+                  width="18px"
+                  alt="Map icon"
+                  title="Map icon"
+              /></span>
+              <span>Free eSIM</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="country-list">
+  <div class="container">
+
+    <ng-container *ngIf="selectedtab === 'one'">
+      <div class="row">
+        <div
+          class="col-md-2 col-sm-3 col-xs-3 cols"
+          *ngFor="let item of countries.slice(0, itemsToShow)"
+        >
+          <div class="box" (click)="goToEsimPage(item)">
+            <div class="inner-wrap">
+              <img
+                *ngIf="item.flag; else altImage"
+                [src]="'/assets/flags/' + item.flag + '.svg'"
+                [alt]="item.CountryName + ' flag'"
+                [title]="item.CountryName + ' flag'"
+                class="img-fluid flag"
+              />
+              <ng-template #altImage>
+                <img
+                  [src]="'/assets/flags/' + item.CountryName + '.svg'"
+                  [alt]="item.CountryName + ' flag'"
+                  [title]="item.CountryName + ' flag'"
+                  class="img-fluid flag"
+                />
+              </ng-template>
+              <h2 class="name">{{ item.CountryName }}</h2>
+              <h3 class="price">From ${{ item.MinSalePrice }} USD</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button
+            class="load-more"
+            *ngIf="itemsToShow < countries.length"
+            (click)="loadMoreItems()"
+          >
+            {{
+              showAll
+                ? "Show All " + countries?.length + " Countries"
+                : "Load More"
+            }}
+          </button>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="selectedtab === 'two'">
+      <div class="row">
+        <div
+          class="col-md-2 col-sm-3 col-xs-3 cols"
+          *ngFor="let item of regionaldata"
+        >
+          <div class="box" (click)="goToEsimPage(item)">
+            <img
+              [src]="'/assets/regional-flags/' + item.regionName + '.svg'"
+              [alt]="item.regionflag + ' flag'"
+              [title]="item.regionflag + ' flag'"
+              class="img-fluid"
+            />
+            <h2 class="name">{{ item.regionName }}</h2>
+            <h3 class="price">From $ {{ item.MinSalePrice }} USD</h3>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="selectedtab === 'three'">
+      <div class="row">
+        <div
+          class="col-md-2 col-sm-3 col-xs-3 cols"
+          *ngFor="let item of monthlyPlans"
+        >
+          <div
+            class="box"
+            (click)="monthlyPlansTab()"
+            [routerLink]="['/esim', item.CountryName]"
+          >
+            <img
+              [src]="'/assets/flags/' + item.flag + '.svg'"
+              [alt]="item.CountryName + ' flag'"
+              [title]="item.CountryName + ' flag'"
+              class="img-fluid flag"
+            />
+            <h2 class="name">{{ item.CountryName }}</h2>
+            <h3 class="price">From $ {{ item.MinSalePrice }} USD</h3>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+

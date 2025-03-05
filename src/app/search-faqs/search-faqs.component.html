@@ -1,0 +1,35 @@
+<div class="mt-4 relative">
+  <div class="">
+    <input
+      type="text"
+      class="form-control !py-4"
+      placeholder="Search topic.."
+      [(ngModel)]="searchText"
+      (input)="search()"
+    />
+    <i class="fa fa-search absolute top-0 left-0 z-[999]"></i>
+  </div>
+  <div
+    class="bg-white z-[9990] absolute top-[60px] left-0 p-2 rounded-md"
+    *ngIf="searchResults.length > 0"
+  >
+    <ul class="max-h-[300px] z-[999] relative overflow-y-auto w-full">
+      <li class="" *ngFor="let result of searchResults">
+        <a [routerLink]="['/info/faq', result.slug]">{{ result.qns }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<p>
+  Common Topics :
+  <span
+    class="cursor-pointer"
+    [routerLink]="['/info/faq/what-payment-options-are-available']"
+    >Payment Method</span
+  >,
+  <span
+    class="cursor-pointer"
+    [routerLink]="['/info/faq/can-i-install-one-eSIM-on-several-devices']"
+  >Esim</span>, 
+  <span class="cursor-pointer" [routerLink]="['/info/Installation']"> Installation</span>
+</p>

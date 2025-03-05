@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="900"
+   height="600"
+   fill="#e30a17"
+   version="1.1"
+   id="svg10"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <path
+     d="M 0,-2.57e-6 H 900 V 600 H 0 Z"
+     fill="#ffffff"
+     id="path2" />
+  <circle
+     cx="300"
+     cy="300"
+     r="150"
+     id="circle4" />
+  <circle
+     cx="337.5"
+     cy="300"
+     r="120"
+     fill="#fff"
+     id="circle6" />
+  <path
+     d="M 417.5,300 553.17628,255.91611 469.32373,371.32924 V 228.67076 l 83.85255,115.41314 z"
+     id="path853" />
+  <path
+     d="m 0,480 h 900 v 60 H 0 Z"
+     id="path851" />
+  <path
+     d="m 224,60 h 676 v 60 H 224 Z"
+     id="path8" />
+  <path
+     d="M 37,108.32924 172.67628,64.24535 88.82373,179.65848 V 37 l 83.85255,115.41314 z"
+     id="path1305"
+     style="fill:#b4975b;fill-opacity:1" />
+  <path
+     d="m 44.438,108.32923 122,-39.64019 -75.40014,103.77939 V 44.19004 L 166.438,147.96945 Z"
+     id="path1307"
+     style="fill:#ffffff;stroke-width:0.899199" />
+  <path
+     d="m 64.138,108.32923 86,-27.94309 -53.15092,73.15597 V 63.11636 l 53.15092,73.15597 z"
+     id="path1309"
+     style="stroke-width:0.633862" />
+  <path
+     d="m 89.538,108.32923 40,-12.99678 -24.72136,34.02603 V 87.29999 l 24.72136,34.02603 z"
+     id="path1311"
+     style="fill:#b4975b;stroke-width:0.29482;fill-opacity:1" />
+</svg>

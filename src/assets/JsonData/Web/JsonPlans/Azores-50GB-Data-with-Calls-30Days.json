@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1141,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>50GB high-speed data&nbsp;</li><li>Unlimited local calling within Supported destinations.</li><li>UK Phone Number (+44) Included</li><li>Unlimited inbound SMS and calls</li><li>Validity starts immediately after purchase</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Outbound texts are not supported.</li><li>International calls are not permitted within this package.</li><li>Service may be blocked permanently if used outside designated countries&nbsp;<br>&nbsp;</li></ul><p><strong>Travel Recommendations:</strong></p><ul><li>Choose travel dates within 5 days from the current date.</li></ul><p><strong>Supported roaming destinations:</strong></p><ul><li>Azores</li></ul><p>&nbsp;</p><p><strong>&nbsp;APN</strong> :&nbsp;mobile.o2.co.uk</p>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Azores 50GB Data with Calls 30Days",
+    "meta_title": "0",
+    "operatorname": "null",
+    "dataallowance": "50",
+    "dataallowancetype": "GB",
+    "voice_minute": "Unlimited voice",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Azores 50GB Data with Calls 30Days",
+    "sellingcost": 30,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "190",
+    "countryname": "Azores"
+  }
+]

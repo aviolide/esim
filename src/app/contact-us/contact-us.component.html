@@ -1,0 +1,80 @@
+
+<section class="search-header page-banner bg overlay" style="background-image: url(assets/images/bg-gradient.png);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-9">
+                <div class="wrap search">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+<section class="des-info mb-5">
+    <div class="container">
+        <div class="form-box">
+            <div>
+                <h2 class="text-center text-lg">Contact Us</h2>
+                <p class="text-center mb-5">Fill out the form below to get in touch with us. We will get back to you as soon as possible.</p>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">First Name</label>
+
+                        <input type="text" formControlName="firstName" placeholder="Enter First Your Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+                        <div *ngIf="submitted && f['firstName'].errors" class="form-err">
+                            <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Last Name (Optional)</label>
+                        <input type="email" formControlName="lastName" class="form-control" placeholder="Enter Your Last Name">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"  aria-label="email"/>
+                        <div *ngIf="submitted && f['email'].errors" class="form-err">
+                            <div *ngIf="f['email'].errors['required']">Email is required</div>
+                            <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input type="number" formControlName="phone" class="form-control" placeholder="Enter Phone Number" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+                        <div *ngIf="submitted && f['phone'].errors" class="form-err">
+                            <div *ngIf="f['phone'].errors['required']">Phone Number is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Esim iccid (Optional)</label>
+                        <input type="email" formControlName="iccid" class="form-control" placeholder="Esim iccid (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Subject </label>
+
+                        <input type="text" formControlName="subject" placeholder="Enter Subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }" />
+                        <div *ngIf="submitted && f['subject'].errors" class="form-err">
+                        <div *ngIf="f['subject'].errors['required']">Subject is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Enter comment</label>
+                        <textarea type="" formControlName="comment" class="form-control" placeholder="Enter Your Comment " rows="4" [ngClass]="{ 'is-invalid': submitted && f['comment'].errors }"></textarea>
+
+                        <div *ngIf="submitted && f['comment'].errors" class="form-err">
+                            <div *ngIf="f['comment'].errors['required']">Comment is required</div>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="aggreement" aria-label="agree">
+                        <label class="form-check-label" for="exampleCheck1">I agree that my submitted data is collected and stored.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

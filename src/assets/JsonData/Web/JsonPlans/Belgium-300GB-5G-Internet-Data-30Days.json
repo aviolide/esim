@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1803,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>Unlimited 300GB High-speed 5G Data in Belgium.&nbsp;</li><li>Validity starts immediately after purchase</li><li>Valid for 30&nbsp;days</li><li>No fair usage policy</li><li>Ultimate data plan for&nbsp;Belgium.</li></ul><p><strong>Usage Restrictions:</strong></p><ul><li>Service may be blocked permanently if used outside designated countries&nbsp;</li></ul><p><strong>Supported roaming destinations:</strong>&nbsp;Belgium&nbsp;</p><ul><li>APN:&nbsp;<a href=\"http://mobile.o2.co.uk/\">mobile.o2.co.uk</a></li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Belgium 300GB 5G Internet Data 30Days",
+    "meta_title": "0",
+    "operatorname": "null",
+    "dataallowance": "300",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Belgium 300GB 5G Internet Data 30Days",
+    "sellingcost": 35.5,
+    "Currency": null,
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "30",
+    "countryname": "Belgium"
+  }
+]

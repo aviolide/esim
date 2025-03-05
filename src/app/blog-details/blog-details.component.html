@@ -1,0 +1,104 @@
+<section
+  class="search-header page-banner bg overlay"
+  style="background-image: url(assets/images/bg-gradient.png)"
+>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <div class="wrap search">
+          <h1>Blogs & Articles</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="view-all-post">
+      <a [routerLink]="['/blogs']">
+        <i class="fa fa-long-arrow-left" aria-hidden="true"></i> View All
+        Posts</a
+      >
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="blog-bg blog-content">
+          <div class="blog-img">
+            <div class="flex items-center gap-2 justify-between pb-4 font-semibold text-md">
+              <div class="flex items-center gap-2">
+                <img src="/assets/images/circle-user.svg" alt="author" />
+                {{ blogDetails?.Author }}
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                  <img src="/assets/images/calendar-clock.svg" alt="calendar" class="w-5 h-5" />
+                  {{ blogDetails?.PublishDate | date: 'MMM d, y' }}
+                </div>
+                <div class="flex items-center gap-2">
+                  <img src="/assets/images/book-open.svg" alt="calendar"  class="w-5 h-5"/>
+                 {{blogDetails?.ReadTime}} Read
+                </div>
+              </div>
+            </div>
+
+            <img
+              [src]="
+                'https://bloglogin.esim.su/data/' + blogDetails?.ImgPath
+              "
+              [alt]="blogDetails?.Title"
+            />
+          </div>
+
+          <div [innerHtml]="blogDetails?.PostContent"></div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="blog-sticky-area">
+          <div class="blog-rtbox">
+            <div class="blog-rt-heading">Category</div>
+            <ul class="blog-rt-listing">
+              <li>
+                <a (click)="setCategory('Country wise eSim Plans', '2')"
+                  >Country wise eSim Plans</a
+                >
+              </li>
+              <li>
+                <a (click)="setCategory('Upcoming events', '3')"
+                  >Upcoming events</a
+                >
+              </li>
+              <li>
+                <a (click)="setCategory('Technology', '4')">Technology</a>
+              </li>
+              <li><a (click)="setCategory('Know How', '5')">Know How </a></li>
+              <li><a (click)="setCategory('Travelers', '6')">Travelers</a></li>
+            </ul>
+          </div>
+
+          <div class="blog-rtbox">
+            <div class="blog-rt-heading">Top 5 Latest Blog</div>
+            <ul class="blog-rt-listing">
+              <li *ngFor="let x of response">
+                <a [routerLink]="['/blogs/', x?.Slug]">
+                  <div class="blog-rt-area">
+                    <div class="blog-rt-img">
+                      <img
+                        [src]="
+                          'https://bloglogin.esim.su/data/' + x?.ImgPath
+                        "
+                        [alt]="x?.Title"
+                      />
+                    </div>
+                    <div class="blog-heading-main">{{ x?.Title }}</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+<!-- Countries Modal -->
+<div
+  class="modal fade qr-code-popup countries"
+  id="countriesModal"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button
+        type="button"
+        class="close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      >
+        <img src="assets/images/cancel.png" class="cancel" />
+      </button>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>1 eSIM, 80+ Countries</h4>
+            <ul>
+              <li *ngFor="let country of filteredCountries">
+                {{ country.name }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for your country"
+                [(ngModel)]="searchQuery"
+                (input)="onSearchChange()"
+              />
+              <button></button>
+            </div>
+            <img
+              src="assets/images/free-esim-countries.png"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

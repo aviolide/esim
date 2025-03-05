@@ -1,0 +1,26 @@
+<section
+  class="page-banner bg overlay"
+  style="background-image: url('assets/images/bg-gradient.png')"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="wrap">
+          <h1>FAQs</h1>
+          <app-search-faqs></app-search-faqs>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-details py-8">
+    <div class="container">
+      <div class="row ">
+        <div class="col" *ngIf="faq.qns !== ''">
+          <h1 class="font-semibold text-lg mb-2">{{ faq.qns }}</h1>
+          <div [innerHTML]="faq.ans"></div>
+        </div>
+      </div>
+    </div>
+  </section>

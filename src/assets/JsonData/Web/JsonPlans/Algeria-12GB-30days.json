@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1032,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>4G Data-only E-SIM.</li><li>Internet connectivity required for eSIM activation.</li><li>Supports on&nbsp;Orascom Algeria.&nbsp;</li><li>Activation: Begins upon the scanning QR code</li><li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li><li>Customer Support: 24/7 business and customer support service</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Supports only in mentioned destination</li></ul><p><strong>Supported destination:</strong></p><ul><li>Algeria</li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Algeria 12GB 30days",
+    "meta_title": "0",
+    "operatorname": "Orascom",
+    "dataallowance": "12",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": null,
+    "DurationSubType": 5,
+    "Kyc_status": 0,
+    "is_promocode": 1,
+    "planename1": "Algeria 12GB 30days",
+    "sellingcost": 14.5,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "35",
+    "countryname": "Algeria"
+  }
+]

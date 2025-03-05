@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1811,
+    "addinformation": "<p><strong>Package Details:</strong></p>\n\n<ul>\n\t<li>Up to 10GB 4G/LTE</li>\n\t<li>Credit valid for 14 days from the 1st use (1st internet connection)</li>\n\t<li>Ready to go, the SIM connects automatically to the best local network</li>\n\t<li>Data tethering allowed</li>\n</ul>\n\n<p><strong>Supported roaming destinations:</strong></p>\n\n<ul>\n\t<li>Botswana</li>\n</ul>\n",
+    "vaildity": "14",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Botswana 10GB 14Days",
+    "meta_title": "0",
+    "operatorname": null,
+    "dataallowance": "10",
+    "dataallowancetype": "GB",
+    "voice_minute": "",
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Botswana 10GB 14Days",
+    "sellingcost": 39,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "246",
+    "countryname": "Botswana"
+  }
+]

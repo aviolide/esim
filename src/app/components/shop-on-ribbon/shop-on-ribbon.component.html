@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="my-[40px] max-w-[800px] mx-auto ">
+      <!-- Wrapper for items -->
+        <div *ngFor="let item of data; let i = index">
+          <ng-container *ngIf="activeIndex === i">
+            <div class="item" [ngClass]="{ active: activeIndex === i }">
+              <div class="ribbon">
+                <div class="wrapper">
+                  <div class="logo">
+                    <img
+                      [src]="'/assets/images/' + item.logo"
+                      alt="logo"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="tagline">
+                    {{ item.tagline }}
+                  </div>
+                  <div class="text">
+                    We are also available on {{ item.name }}
+                  </div>
+                  <div>
+                    <button
+                      [style.background-color]="item.color"
+                      (click)="visit(item.link)"
+                    >
+                      Visit {{ item.name }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+      <!-- Custom Dots -->
+      <ol class="nav-dots">
+        <li
+          *ngFor="let item of data; let i = index"
+          [class.active]="activeIndex === i"
+          (click)="setActiveIndex(i)"
+        ></li>
+      </ol>
+    </div>
+    </div>  
+  </div>
+</div>

@@ -1,0 +1,723 @@
+<section class="page-banner bg overlay" style="background-image: url('assets/images/bg-gradient.png');">
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <div class="wrap">
+                  <h1>Installation Guide</h1>
+      </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="content-wrapper sec-top-spacing">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="tab-btns">
+          <li>
+            <a
+              (click)="tabclick('one')"
+              [ngClass]="{ activetab: selectedtab === 'one' ? true : false }"
+              ><img src="assets/images/ios-icon1.png" alt="iOS Icon"
+            /></a>
+          </li>
+          <li>
+            <a
+              (click)="tabclick('two')"
+              [ngClass]="{ activetab: selectedtab === 'two' ? true : false }"
+              ><img src="assets/images/and-icon1.png" alt="Andoid Icon"
+            /></a>
+          </li>
+        </ul>
+        <div class="searchbar">
+          <!-- search section start -->
+          <div *ngIf="selectedtab === 'one'">
+            <div class="container">
+              <div class="row">
+                <div class="install_header">
+                  <h1>How To Install ESimExpress Mobile eSIM</h1>
+                  <p>
+                    For iPhone running iOS 13. The actual texts or screen might
+                    be different depending on the iOS version and the device.
+                  </p>
+                  <div class="inta_btn"><a (click)="scrollToIPad()">For iPad</a></div>
+                </div>
+                <div class="instalist_view">
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">01</div>
+                        <div class="insta_rt">
+                          <h2>Tap Cellular or Mobile Data from Settings</h2>
+                          <p>
+                            Make sure your device is connected to a stable WiFi
+                            network.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_01.png" alt="Cellular Mobile Data Settings" />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">02</div>
+                        <div class="insta_rt">
+                          <h2>Tap Add Cellular Plan</h2>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_02.png" alt="Add Cellular Plan" />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">03</div>
+                        <div class="insta_rt">
+                          <h2>Scan QR code we provide</h2>
+                          <p>
+                            <span>* Internet connection required</span> In case
+                            you have only one device and cannot scan the QR
+                            code, enter the activation code and SM-DP+ address
+                            manually.
+                          </p>
+                          <p>
+                            They are provided along with the QR code via email.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_03.png" alt="Scan QR code " />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">04</div>
+                        <div class="insta_rt">
+                          <h2>Tap Add Cellular Plan</h2>
+                          <p>
+                            Note that you cannot go back or cancel after you tap
+                            it.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_04.png" alt="Add Cellular Plan" />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">05</div>
+                        <div class="insta_rt">
+                          <h2>
+                            Enter "ESimExpress Mobile" to label your new cellular
+                            plan
+                          </h2>
+                          <p>You can change labels later in Settings.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_05.png" alt="Cellular plan labels" />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">06</div>
+                        <div class="insta_rt">
+                          <h2>Tap Update on Carrier Settings Update</h2>
+                          <p>
+                            APN (Access Point Name), which is required for
+                            Personal Hotspot, will be configured automatically
+                            by doing this step.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_06.png" alt="Update Carrier Settings Update" />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">07</div>
+                        <div class="insta_rt">
+                          <h2>Choose Primary as your Default Line</h2>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_07.png" alt="Default Line setting"/>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">08</div>
+                        <div class="insta_rt">
+                          <h2>
+                            Choose Primary for iMessage, FaceTime and Apple ID
+                          </h2>
+                          <p>Or simply tap Continue without selecting any</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_08.png"  alt="Default Line setting"/>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">09</div>
+                        <div class="insta_rt">
+                          <h2>Choose your default line for cellular data</h2>
+                          <p>
+                            Select Primary unless you want to use ESimExpress Mobile
+                            eSIM immediately for cellular data.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_09.png" alt="Choose cellular data" />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="install_header">
+                  <h1>How To Use ESimExpress Mobile eSIM For Mobile Data</h1>
+                  <p>
+                    Follow these steps after you arrive at your travel
+                    destination.
+                  </p>
+               
+                </div>
+                <div class="instalist_view">
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">01</div>
+                        <div class="insta_rt">
+                          <h2>Turn on ESimExpress Mobile eSIM (Cellular Plan)</h2>
+                          <p>
+                            Go to Settings > Cellular or Mobile Data and make
+                            sure ESimExpress Mobile eSIM is turned on.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_01_a.png" alt="Turn on ESimExpress eSIM" />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">02</div>
+                        <div class="insta_rt">
+                          <h2>
+                            Set it up for Cellular Data and turn Data Roaming on
+                          </h2>
+                          <p>
+                            Tap Cellular Data and assign ESimExpress Mobile eSIM.
+                            Also, enable Data Roaming.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_02_a.png" alt="Enable Data Roaming"/>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left"></div>
+                        <div class="insta_rt">
+                          <h2>OPTIONAL</h2>
+                          <p>
+                            <strong
+                              >For Personal Hotspot, set up APN (Access Point
+                              Name)</strong
+                            >
+                            In case you did not update the Carrier Settings
+                            (Step 06 above) and want to use Personal Hotspot
+                            feature, tap Cellular Data Network and enter
+                            "ESimExpress" in all 4 APN fields (Cellular Data, LTE
+                            setup, MMS and Personal Hotspot)
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/isnta_03_a.png" alt="Set up APN"/>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Ipad system -->
+
+              <div class="install_header" id="ipad_view">
+                <div class="mainheading_box">SET UP GUIDE FOR iPad</div>
+                <h1>How To Install ESimExpress Mobile eSIM</h1>
+                <p>
+                  The instruction below is for iPad (7th generation
+                  WiFi+Cellular model) running iPadOS 13. The actual texts or
+                  screen might be different depending on the OS version and the
+                  device.
+                </p>
+              </div>
+              <div class="instalist_view">
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left">01</div>
+                      <div class="insta_rt">
+                        <h2>
+                          Tap Cellular Data > Add a New Plan from Settings
+                        </h2>
+                        <p>
+                          Make sure your device is connected to a stable WiFi
+                          network.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_01.png" alt="Cellular data setting "/>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left">02</div>
+                      <div class="insta_rt">
+                        <h2>
+                          Select "Other …" at the bottom of the carrier list
+                        </h2>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_02.png" alt="Carrer list setting"/>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left">03</div>
+                      <div class="insta_rt">
+                        <h2>Scan QR code we provide</h2>
+                        <p>
+                          <span>* Internet connection required</span> In case
+                          you have only one device and cannot scan the QR code,
+                          enter the activation code and SM-DP+ address manually.
+                          They are provided along with the QR code via email.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_03.png" alt="Scan QR code " />
+                    </div>
+                  </li>
+                </ul>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left">04</div>
+                      <div class="insta_rt">
+                        <h2>Tap Add Cellular Plan</h2>
+                        <p>
+                          Note that you cannot go back or cancel after you tap
+                          it.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_04.png" alt="Add Cellular Plan" />
+                    </div>
+                  </li>
+                </ul>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left">05</div>
+                      <div class="insta_rt">
+                        <h2>Make sure it’s added to Cellular Plans</h2>
+                        <p>
+                          Some iPadOS versions force to change the plan name
+                          from ESimExpress Mobile to Carrier or Carrier-Carrier but
+                          it does not affect the eSIM functions.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_05.png" alt="Add Cellular Plans"/>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left">06</div>
+                      <div class="insta_rt">
+                        <h2>Tap Update on Carrier Settings Update</h2>
+                        <p>
+                          APN (Access Point Name), which is required for
+                          Personal Hotspot, will be configured automatically by
+                          doing this step.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_06.png" alt="Carrier Settings Update" />
+                    </div>
+                  </li>
+                </ul>
+                <div class="install_header">
+                  <h1>How To Use ESimExpress Mobile eSIM For Mobile Data</h1>
+                  <p>
+                    Follow these steps after you arrive at your travel
+                    destination.
+                  </p>
+                </div>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left"></div>
+                      <div class="insta_rt">
+                        <p>
+                          Make sure Roaming is turned on. Select and activate
+                          the ESimExpress Mobile eSIM under Cellular Plans.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_07.png" alt="Roaming enabled" />
+                    </div>
+                  </li>
+                </ul>
+                <ul class="insta_card_list">
+                  <li>
+                    <div class="insta_box">
+                      <div class="insta_left"></div>
+                      <div class="insta_rt">
+                        <h2>OPTIONAL</h2>
+                        <h3>
+                          For Personal Hotspot, set up APN (Access Point Name)
+                        </h3>
+                        <p>
+                          In case you did not update the Carrier Settings (Step
+                          06 above) and want to use Personal Hotspot feature,
+                          tap Cellular Data Network and enter "ESimExpress" in all 4
+                          APN fields (Cellular Data, LTE setup, MMS and Personal
+                          Hotspot)
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="inta_img">
+                      <img src="./assets/images/ipad_08.png" alt="Apn Setting" />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="ng-autocomplete" *ngIf="selectedtab === 'two'">
+            <div class="container">
+              <div class="row">
+                <div class="install_header">
+                  <h1>How To Install ESimExpress Mobile eSIM</h1>
+                  <p>
+                    For Pixel 3a running Android 10. Please make sure your
+                    device’s Android version and SIM Manager are up-to-date.
+                  </p>
+                </div>
+                <div class="instalist_view">
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">01</div>
+                        <div class="insta_rt">
+                          <h2>Go to settings and tap on connections</h2>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/installation/android/esim/screenshot1.jpg" class="img-fluid" alt="Go to connections">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">02</div>
+                        <div class="insta_rt">
+                          <h2>Tap on SIM card manager</h2>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/installation/android/esim/screenshot2.jpg" class="img-fluid" alt="SIM card manager">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">03</div>
+                        <div class="insta_rt">
+                          <h2>Tap on Add an eSIM mobile plan
+                          </h2>
+                        
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/installation/android/esim/screenshot3.jpg" class="img-fluid" alt="Choose a number ">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">04</div>
+                        <div class="insta_rt">
+                          <h2>Scan carrier QR code </h2>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/installation/android/esim/screenshot4.jpg" class="img-fluid" alt="Scan carrier QR code">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">05</div>
+                        <div class="insta_rt">
+                          <h2>Tap Activate to add the eSIM to your device</h2>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/installation/android/esim/screenshot5.jpg" class="img-fluid" alt="Tap Activate to eSIM ">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="insta_card_list">
+                    <li>
+                      <div class="insta_box">
+                        <div class="insta_left">06</div>
+                        <div class="insta_rt">
+                          <h2>Choose a number (SIM) to use</h2>
+                         
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="inta_img">
+                        <img src="./assets/images/installation/android/esim/screenshot6.jpg" class="img-fluid" alt="Choose a number ">
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="install_header" id="ipad">
+                    <h1>How To Use ESimExpress Mobile eSIM For Mobile Data</h1>
+                    <p>
+                      Follow these steps after you arrive at your travel
+                      destination.
+                    </p>
+                  </div>
+                  <div class="instalist_view">
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">01</div>
+                          <div class="insta_rt">
+                            <h2>
+                              Under Mobile network, tap ESimExpress Mobile
+                              (Downloaded SIM) and activate it.
+                            </h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_01.png" alt="Mobile network" />
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">02</div>
+                          <div class="insta_rt">
+                            <h2>
+                              Make sure Mobile data and Roaming are both turned
+                              on. Then scroll down and tap Advanced.
+                            </h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_02.png"  alt="Mobile data roaming enabled"/>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">03</div>
+                          <div class="insta_rt">
+                            <h2>Tap Access Point Names.</h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_03.png" alt="Access Point Names" />
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">04</div>
+                          <div class="insta_rt">
+                            <h2>
+                              Tap the three dots icon on the top right corner
+                              and select New APN.
+                            </h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_04.png" alt="Select New APN" />
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">05</div>
+                          <div class="insta_rt">
+                            <h2>
+                              Enter "ESimExpress Mobile" for Name and "ESimExpress" (all
+                              lowercase) for APN.
+                            </h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_05.png"  alt="The APN to ESimExpress"/>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">06</div>
+                          <div class="insta_rt">
+                            <h2>
+                              Tap the three dots icon on the top right corner
+                              and hit Save.
+                            </h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_06.png" alt="Save APN setting"/>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="insta_card_list">
+                      <li>
+                        <div class="insta_box">
+                          <div class="insta_left">07</div>
+                          <div class="insta_rt">
+                            <h2>
+                              Select the APN named ESimExpress Mobile you just
+                              created.
+                            </h2>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inta_img">
+                          <img src="./assets/images/andro_07.png" alt="ESimExpress Mobile APN created" />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- search section  -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

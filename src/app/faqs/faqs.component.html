@@ -1,0 +1,51 @@
+<section
+  class="page-banner bg overlay"
+  style="background-image: url('assets/images/bg-gradient.png')"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="wrap">
+          <h1>FAQs</h1>
+          <app-search-faqs></app-search-faqs>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main faq">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="accordion grid grid-cols-1 md:grid-cols-2 gap-4" id="accordionExample">
+          <div class="accordion-item" *ngFor="let item of faqs; index as i">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed text-[13px] font-medium py-3 border rounded-sm text-slate-900 leading-loose"
+                type="button"
+                data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#collapse' + i"
+                aria-expanded="true"
+                [attr.aria-controls]="'collapse' + i"
+              >
+                {{ item.qns }}
+              </button>
+            </h2>
+            <div
+              [id]="'collapse' + i"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <div [innerHTML]="item.ans"></div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1038,
+    "addinformation": "<p><strong>Package Details:</strong></p><ul><li>4G Data-only E-SIM.</li><li>Internet connectivity required for eSIM activation.</li><li>Supports on&nbsp;Unitary velcom Belarus</li><li>Activation: Begins upon the scanning QR code</li><li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li><li>Customer Support: 24/7 business and customer support service</li></ul><p><strong>Usage Restrictions</strong>:</p><ul><li>Supports only in mentioned destination</li></ul><p><strong>Supported destination:</strong></p><ul><li>&nbsp;&nbsp;Belarus</li></ul>",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Belarus 4GB 30days",
+    "meta_title": "Belarus eSIM Prepaid 3GB Data Plan - Buy Belarus esim at $6 for 30Days | eSimExpress",
+    "operatorname": "null",
+    "dataallowance": "4",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": null,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Belarus 4GB 30days",
+    "sellingcost": 6.5,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "47",
+    "countryname": "Belarus"
+  }
+]

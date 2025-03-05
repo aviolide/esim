@@ -1,0 +1,29 @@
+[
+  {
+    "P_id": 1572,
+    "addinformation": "<p><strong>Package Details:</strong></p>\n\n<ul>\n\t<li>4G Data-only E-SIM.</li>\n\t<li>Operates on the Grameenphone Bangladesh in&nbsp;Bangladesh.</li>\n\t<li>Internet connectivity required for eSIM activation.</li>\n\t<li>Activation: Begins upon connecting to network in supported countries</li>\n\t<li>Compatibility: Supports Android and iOS devices (refer to FAQ for compatible handsets)</li>\n\t<li>Customer Support: 24/7 business and customer support service</li>\n</ul>\n\n<p><strong>Usage Restrictions</strong>:</p>\n\n<ul>\n\t<li>Supports only in mentioned destination</li>\n</ul>\n\n<p><strong>Supported destination:</strong></p>\n\n<ul>\n\t<li>Bangladesh</li>\n</ul>\n\n<p><strong>APN:</strong></p>\n\n<ul>\n\t<li>plus</li>\n</ul>\n",
+    "vaildity": "30",
+    "plantype": "1",
+    "mincartvalue": 1,
+    "maxcartvalue": 3,
+    "planename": "Bangladesh 4GB 30 Days",
+    "meta_title": "0",
+    "operatorname": "null",
+    "dataallowance": "4",
+    "dataallowancetype": "GB",
+    "voice_minute": null,
+    "YearlySellingcost": "0",
+    "PriceDiffernece": "0",
+    "DurationType": 1,
+    "DurationSubType": 5,
+    "Kyc_status": null,
+    "is_promocode": 1,
+    "planename1": "Bangladesh 4GB 30 Days",
+    "sellingcost": 5.5,
+    "Currency": "1",
+    "vailditytype": "Days",
+    "dataallowanceMonthly": null,
+    "c_r_id": "24",
+    "countryname": "Bangladesh"
+  }
+]

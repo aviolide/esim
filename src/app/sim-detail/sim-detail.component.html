@@ -1,0 +1,296 @@
+<div class="popupinfo">
+  <div
+    class="modal-dialog max-w-[700px] esim-details-modal bg-white rounded-[20px]"
+  >
+    <div class="modal-content">
+      <div class="modal-body pt-6 pb-1 px-[30px] rounded-[10px] md:rounded-[0px]">
+        <div class="flex justify-between items-center mb-1">
+          <img
+            [alt]="countryname + ' flag'"
+            [src]="'/assets/flags/' + countryname + '.svg'"
+            class="w-[35px] h-[35px] rounded-full shadow-md"
+            [title]="countryname + ' flag'"
+          />
+          <img
+            src="/assets/images/close-modal-2.svg"
+            alt="close-modal"
+            title="close-modal"
+            class="cursor-pointer"
+            (click)="PageRedirect()"
+          />
+        </div>
+
+        <div
+          class="text-[#040404] text-[20px] md:text-[24px] font-bold text-center mb-1"
+        >
+          {{ database_planename }}
+        </div>
+        <p
+          class="text-[13px] text-black leading-[24px] text-center max-w-[650px] mx-auto"
+        >
+          Get the perfect plan for your needs with ESimExpress
+          {{ countryname }} Traveller Plan including {{ dataallowance }}
+          {{ dataallowancetype }} {{ dataallowanceMonthly }} Data,
+          {{ voice_minute }} for ${{ sellingcost }} only with {{ vaildity }}-{{
+            vailditytype
+          }}
+          validity powered by reliable {{ operatername }} network.
+        </p>
+
+        <div class="text-[14px] text-black mt-3">
+          <div
+            class="flex justify-between items-center border border-[#E1E4E6] rounded-[12px] text-[14px] px-4 h-[54px]"
+          >
+            <div class="flex items-center">
+              <img
+                src="/assets/images/global-icon.svg"
+                alt="global-icon"
+                title="global-icon"
+                class="mt-[5px]"
+              />
+              eSIM Type
+            </div>
+            <div class="font-medium">Prepaid</div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4 mt-4">
+            <div
+              class="flex justify-between items-center border border-[#E1E4E6] rounded-[12px] text-[14px] px-4 h-[54px]"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/assets/images/mobile-datap.svg"
+                  alt="mobile data"
+                  title="mobile data"
+                  class="mr-[5px]"
+                />
+                Data
+              </div>
+              <div class="font-medium">
+                <ng-container>
+                  {{ dataallowance }} {{ dataallowancetype }}
+                  {{ dataallowanceMonthly }}
+                </ng-container>
+              </div>
+            </div>
+            <div
+              class="flex justify-between items-center border border-[#E1E4E6] rounded-[12px] text-[14px] px-4 h-[54px]"
+            >
+              <div class="flex items-center">
+                <img
+                  src="/assets/images/calendar-iconp.svg"
+                  alt="validity"
+                  title="validity"
+                  class="mr-[5px]"
+                />
+                Validity
+              </div>
+              <div class="font-medium">
+                {{ vaildity }} {{ " " }} {{ vailditytype }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-h-[260px] thin-scroll overflow-hidden hover:!overflow-y-auto">
+          <ng-container *ngIf="isIMEIPlan">
+            <div class="mt-[20px]">
+              <p
+                class="text-[#3A3A3A] text-[13px] font-semibold leading-normal"
+              >
+                Dial *#06# on your phone to retrieve the EID and IMEI numbers,
+                then enter them without spaces.
+              </p>
+              <div class="grid md:grid-cols-2 gap-2 md:gap-4 mt-2">
+                <div>
+                  <input
+                    type="text"
+                    minlength="32"
+                    maxlength="32"
+                    class="form-control"
+                    name="eid"
+                    [(ngModel)]="eid"
+                    #eidInput="ngModel"
+                    placeholder="Enter 32 Digit EID (without space)"
+                    (keypress)="numberOnly($event)"
+                    required
+                  />
+                  <!-- Validation Messages -->
+                  <div
+                    class="form-err"
+                    *ngIf="eidInput.invalid && eidInput.touched"
+                  >
+                    <p *ngIf="eidInput.errors?.['required']">
+                      EID is required.
+                    </p>
+                    <p *ngIf="eidInput.errors?.['minlength']">
+                      EID must be 32 characters long.
+                    </p>
+                    <p *ngIf="eidInput.errors?.['maxlength']">
+                      EID cannot exceed 32 characters.
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="imei"
+                    [(ngModel)]="imei"
+                    #imeiInput="ngModel"
+                    placeholder="Enter 15 Digit IMEI number (without space)"
+                    (keypress)="numberOnly($event)"
+                    minlength="15"
+                    maxlength="15"
+                    required
+                  />
+                  <div
+                    class="form-err"
+                    *ngIf="imeiInput.invalid && imeiInput.touched"
+                  >
+                    <p *ngIf="imeiInput.errors?.['required']">
+                      IMEI is required.
+                    </p>
+                    <p *ngIf="imeiInput.errors?.['minlength']">
+                      IMEI must be 15 characters long.
+                    </p>
+                    <p *ngIf="imeiInput.errors?.['maxlength']">
+                      IMEI cannot exceed 15 characters.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <div class="mt-3" *ngIf="isTravelDateRequired">
+            <div class="font-semibold">Travel Date</div>
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="travelDate"
+              name="date"
+              required
+            />
+          </div>
+
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item border-0 my-[20px]">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed border border-[#E1E4E6] !rounded-[12px] text-[14px] px-4 h-[54px] font-semibold w-full text-[#3A3A3A] shadow-none bg-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  Supported Countries
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse border border-[#E1E4E6] !rouned-[12px]"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body leading-[24px] text-[#3A3A3A]">
+                  <ng-container *ngIf="countrynotfound">
+                    <ul>
+                      <li
+                        class="flex items-center justify-between py-1 font-medium text-[14px]"
+                      >
+                        <div>{{ countryname }}</div>
+                        <div>
+                          <img
+                            [src]="'/assets/flags/' + countryname + '.svg'"
+                            [alt]="countryname + ' flag'"
+                            class="img-fluid w-[30px]"
+                            [title]="countryname + ' flag'"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </ng-container>
+
+                  <ng-container *ngIf="supportedcountries.length > 0">
+                    <ul>
+                      <li
+                        class="flex items-center justify-between py-1 text-[14px] font-medium"
+                        *ngFor="let e of supportedcountries"
+                      >
+                        <div>{{ e.CountryName }}</div>
+                        <div>
+                          <img
+                            [alt]="countryname + ' flag'"
+                            [title]="countryname + ' flag'"
+                            [src]="'/assets/flags/' + e.CountryName + '.svg'"
+                            class="img-fluid w-[30px]"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border-0 my-[20px]">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed border border-[#E1E4E6] !rounded-[12px] text-[14px] px-4 h-[54px] font-semibold w-full text-[#3A3A3A] shadow-none bg-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  Additional Information
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse border border-[#E1E4E6] !rouned-[12px]"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body leading-[24px] text-[#3A3A3A]">
+                  <div class="add-info-content" [innerHtml]="Additional"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            class="btn flex items-center py-[15px] md:py-3 justify-center text-[#004346] w-full !border !border-[#344B4C] !rounded-[12px] text-center font-bold mb-1 mt-1 text-[14px] md:text-[16px] hover:bg-[#004346] hover:text-white"
+            (click)="buyesim('cart')"
+            *ngIf="!isHideAddToCartBtn"
+          >
+            <img
+              src="/assets/images/shopping-cart-icon.svg"
+              alt="shopping-cart-icon"
+              title="shopping-cart-icon "
+              class="mr-[5px]"
+            />
+            Add to Cart
+          </button>
+          <button
+            type="button"
+            class="btn flex items-center py-[15px] md:py-3 text-[14px] md:text-[16px] justify-center bg-[#004346] text-white w-full !rounded-[12px] text-center font-bold mb-1 mt-1 hover:!bg-[#004346] focus:!bg-[#004346] active:!bg-[#004346] hover:opacity-80 focus:opacity-80 active:opacity-80"
+            (click)="buyesim('buy')"
+          >
+            US $ - {{ Finalsellingcost }} BUY NOW
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<span
+  data-bs-toggle="modal"
+  data-bs-target="#loginModal"
+  #authLoginModal
+></span>
